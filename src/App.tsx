@@ -14,6 +14,7 @@ const App = () => {
             <Nav.Link href="#problems">お悩み</Nav.Link>
             <Nav.Link href="#improvements">改善案</Nav.Link>
             <Nav.Link href="#about">自己紹介</Nav.Link>
+            <Nav.Link href="#skills">スキル</Nav.Link>
             <Nav.Link href="#challenge">これからの挑戦</Nav.Link>
           </Nav>
         </Container>
@@ -25,7 +26,7 @@ const App = () => {
         className="text-center mb-0"
         style={{ fontWeight: "bold", fontSize: "1.3rem" }}
       >
-        このサイトはSayaka-Webが制作しています。
+        このサイトはSayaka-WebがReactにて制作しています。
       </Alert>
 
       {/* ヒーローセクション（動画背景） */}
@@ -39,25 +40,44 @@ const App = () => {
           muted
           loop
           playsInline
-          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }}
+          style={{
+            position: "absolute",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            zIndex: -1,
+          }}
           src="/hero-image.mp4"
         >
           <source src="/hero-image.mp4" type="video/mp4" />
         </video>
 
-        <Container className="d-flex flex-column justify-content-center align-items-center h-100 px-3">
-          <h1 style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)", fontSize: "3rem" }}>
-            広告運用 × Web制作スキルで<br />
-            あなたの集客と売上を強力サポート
+        <Container className="d-flex flex-column justify-content-center align-items-center h-100">
+          <h1
+            style={{
+              textShadow: "2px 2px 6px rgba(0,0,0,0.7)",
+              fontSize: "3rem",
+              fontWeight: "bold",
+            }}
+          >
+            広告運用 × Web制作
           </h1>
-          <p style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.6)", fontSize: "1.5rem", maxWidth: "700px", marginTop: "1rem" }}>
-            最新のMeta・Google広告運用に加え、HTML・LP制作などウェブ制作スキルも活用して、<br />
-            効果的な集客とコンバージョンアップを実現します。
+          <p
+            style={{
+              textShadow: "1px 1px 4px rgba(0,0,0,0.6)",
+              fontSize: "1.5rem",
+              fontWeight: "600",
+              marginBottom: "1.5rem",
+            }}
+          >
+            集客からファネル設計、売上までワンストップでサポートします
           </p>
           <Button
             variant="primary"
             href="mailto:sayakaohara@example.com?subject=無料相談の問い合わせ"
-            style={{ padding: "1rem 2rem", fontSize: "1.5rem", marginTop: "1.5rem" }}
+            style={{ padding: "1rem 2rem", fontSize: "1.5rem", fontWeight: "600" }}
           >
             無料相談はこちら
           </Button>
@@ -110,14 +130,32 @@ const App = () => {
             </Col>
           </Row>
 
-          <h3 style={{ fontSize: "1.8rem", fontWeight: "600", marginTop: "1.5rem", marginBottom: "3rem" }}>
+          <h3
+            style={{
+              fontSize: "1.8rem",
+              fontWeight: "600",
+              marginTop: "1.5rem",
+              marginBottom: "3rem",
+            }}
+          >
             対応可能な内容
           </h3>
 
           {/* 2列グリッドでアイコン＋説明 */}
           <Row style={{ fontSize: "1.3rem", lineHeight: 1.6 }}>
-            <Col xs={6} className="text-center mb-4" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-              <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginBottom: "0.5rem" }}>
+            <Col
+              xs={6}
+              className="text-center mb-4"
+              style={{ display: "flex", flexDirection: "column", alignItems: "center" }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  gap: "1rem",
+                  marginBottom: "0.5rem",
+                }}
+              >
                 <FaFacebookF size={80} color="#3b5998" />
                 <FaInstagram size={80} color="#E1306C" />
               </div>
@@ -166,6 +204,34 @@ const App = () => {
             <li>広告を始めたけど成果が安定しない個人事業主・小規模チームの方</li>
             <li>複数ツールの連携や仕組みを整理したい方</li>
             <li>英語対応も視野に海外展開を考えている方</li>
+          </ul>
+        </section>
+
+        {/* スキルと強みセクションを追加 */}
+        <section id="skills" className="mb-5">
+          <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>スキルと強み</h2>
+          <ul style={{ fontSize: "1.3rem", lineHeight: 1.7 }}>
+            <li>
+              <strong>広告運用関連スキル：</strong>Meta広告・Google広告の基礎知識と実務経験、広告アカウント設定、ターゲティング設定、効果測定とレポーティング
+            </li>
+            <li>
+              <strong>分析・レポート作成：</strong>事務経験を活かし、データ集計や広告成果レポートの作成、Excel・Googleスプレッドシートによる効率的なデータ管理
+            </li>
+            <li>
+              <strong>プログラミング・Web制作：</strong>HTML・CSS・Reactを用いたLP制作や広告ランディングページの最適化
+            </li>
+            <li>
+              <strong>デザインスキル：</strong>Canva、Figma、Adobe Illustratorを使った広告バナーやSNS用画像の作成、クリエイティブ制作のサポート
+            </li>
+            <li>
+              <strong>コミュニケーション：</strong>クライアントとのヒアリングや課題整理、わかりやすい説明と連携調整
+            </li>
+            <li>
+              <strong>多言語対応：</strong>英語のドキュメント作成やツール設定が可能、海外展開サポートも対応可能
+            </li>
+            <li>
+              <strong>公式LINE/UTAGE設定：</strong>LINE公式アカウントやUTAGEの設定・運用サポートを行い、英語ドキュメントの作成や多言語対応も可能です。海外展開を視野に入れたスムーズなコミュニケーションとツール連携を支援します。
+            </li>
           </ul>
         </section>
 
