@@ -14,6 +14,7 @@ const App = () => {
             <Nav.Link href="#problems">お悩み</Nav.Link>
             <Nav.Link href="#improvements">改善案</Nav.Link>
             <Nav.Link href="#about">自己紹介</Nav.Link>
+            <Nav.Link href="#challenge">これからの挑戦</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -33,28 +34,30 @@ const App = () => {
         className="position-relative text-center text-white mb-5"
         style={{ height: "60vh", overflow: "hidden" }}
       >
-<video
-  autoPlay
-  muted
-  loop
-  playsInline
-  style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }}
-  src="/hero-image.mp4"
->
-  <source src="/hero-image.mp4" type="video/mp4" />
-</video>
+        <video
+          autoPlay
+          muted
+          loop
+          playsInline
+          style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }}
+          src="/hero-image.mp4"
+        >
+          <source src="/hero-image.mp4" type="video/mp4" />
+        </video>
 
-        <Container className="d-flex flex-column justify-content-center align-items-center h-100">
+        <Container className="d-flex flex-column justify-content-center align-items-center h-100 px-3">
           <h1 style={{ textShadow: "2px 2px 6px rgba(0,0,0,0.7)", fontSize: "3rem" }}>
-            広告運用 × Web制作
+            広告運用 × Web制作スキルで<br />
+            あなたの集客と売上を強力サポート
           </h1>
-          <p style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.6)", fontSize: "1.5rem" }}>
-            集客からファネル設計、売上までワンストップでサポートします
+          <p style={{ textShadow: "1px 1px 4px rgba(0,0,0,0.6)", fontSize: "1.5rem", maxWidth: "700px", marginTop: "1rem" }}>
+            最新のMeta・Google広告運用に加え、HTML・LP制作などウェブ制作スキルも活用して、<br />
+            効果的な集客とコンバージョンアップを実現します。
           </p>
           <Button
             variant="primary"
             href="mailto:sayakaohara@example.com?subject=無料相談の問い合わせ"
-            style={{ padding: "1rem 2rem", fontSize: "1.5rem" }}
+            style={{ padding: "1rem 2rem", fontSize: "1.5rem", marginTop: "1.5rem" }}
           >
             無料相談はこちら
           </Button>
@@ -94,7 +97,6 @@ const App = () => {
                 alt="Sayaka-Web プロフィール写真"
                 style={{ width: "250px", height: "250px", objectFit: "cover" }}
               />
-             
             </Col>
             <Col md={8}>
               <p style={{ fontSize: "1.3rem", lineHeight: 1.7 }}>
@@ -113,51 +115,49 @@ const App = () => {
           </h3>
 
           {/* 2列グリッドでアイコン＋説明 */}
-         {/* 2列グリッドでアイコン＋説明 */}
-<Row style={{ fontSize: "1.3rem", lineHeight: 1.6 }}>
-  <Col xs={6} className="text-center mb-4" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-    <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginBottom: "0.5rem" }}>
-      <FaFacebookF size={80} color="#3b5998" />
-      <FaInstagram size={80} color="#E1306C" />
-    </div>
-    <p>Meta広告（Facebook/Instagram）</p>
-  </Col>
-  <Col xs={6} className="text-center mb-4">
-    <FaGoogle size={80} style={{ color: "#4285F4" }} />
-    <p style={{ marginTop: "0.5rem" }}>Google広告運用</p>
-  </Col>
+          <Row style={{ fontSize: "1.3rem", lineHeight: 1.6 }}>
+            <Col xs={6} className="text-center mb-4" style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
+              <div style={{ display: "flex", justifyContent: "center", gap: "1rem", marginBottom: "0.5rem" }}>
+                <FaFacebookF size={80} color="#3b5998" />
+                <FaInstagram size={80} color="#E1306C" />
+              </div>
+              <p>Meta広告（Facebook/Instagram）</p>
+            </Col>
+            <Col xs={6} className="text-center mb-4">
+              <FaGoogle size={80} style={{ color: "#4285F4" }} />
+              <p style={{ marginTop: "0.5rem" }}>Google広告運用</p>
+            </Col>
 
-  <Col xs={6} className="text-center mb-4">
-    {/* Yahooの代わりにターゲットアイコン */}
-    <FiTarget size={80} color="#FF3300" />
-    <p style={{ marginTop: "0.5rem" }}>Yahoo広告運用</p>
-  </Col>
-  <Col xs={6} className="text-center mb-4">
-    <FaReact size={80} style={{ color: "#61DAFB" }} />
-    <p style={{ marginTop: "0.5rem" }}>ReactでLP作成</p>
-  </Col>
+            <Col xs={6} className="text-center mb-4">
+              {/* Yahooの代わりにターゲットアイコン */}
+              <FiTarget size={80} color="#FF3300" />
+              <p style={{ marginTop: "0.5rem" }}>Yahoo広告運用</p>
+            </Col>
+            <Col xs={6} className="text-center mb-4">
+              <FaReact size={80} style={{ color: "#61DAFB" }} />
+              <p style={{ marginTop: "0.5rem" }}>ReactでLP作成</p>
+            </Col>
 
-  <Col xs={6} className="text-center mb-4">
-    <FaLine size={80} style={{ color: "#00B900" }} />
-    <p style={{ marginTop: "0.5rem" }}>LINE公式設定</p>
-  </Col>
-  <Col xs={6} className="text-center mb-4">
-    {/* Utageの代替アイコン */}
-    <svg
-      width="80"
-      height="80"
-      viewBox="0 0 24 24"
-      fill="#FF6F61"
-      xmlns="http://www.w3.org/2000/svg"
-      style={{ marginBottom: "0.5rem" }}
-    >
-      <path d="M3 3h18v18H3V3z" />
-      <path fill="white" d="M7 7h10v10H7V7z" />
-    </svg>
-    <p>UTAGE設定</p>
-  </Col>
-</Row>
-
+            <Col xs={6} className="text-center mb-4">
+              <FaLine size={80} style={{ color: "#00B900" }} />
+              <p style={{ marginTop: "0.5rem" }}>LINE公式設定</p>
+            </Col>
+            <Col xs={6} className="text-center mb-4">
+              {/* Utageの代替アイコン */}
+              <svg
+                width="80"
+                height="80"
+                viewBox="0 0 24 24"
+                fill="#FF6F61"
+                xmlns="http://www.w3.org/2000/svg"
+                style={{ marginBottom: "0.5rem" }}
+              >
+                <path d="M3 3h18v18H3V3z" />
+                <path fill="white" d="M7 7h10v10H7V7z" />
+              </svg>
+              <p>UTAGE設定</p>
+            </Col>
+          </Row>
 
           <h3 style={{ fontSize: "1.8rem", fontWeight: "600", marginTop: "1.5rem" }}>
             こんな方におすすめ
