@@ -1,9 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 import { Container, Button, Navbar, Nav, Alert, Row, Col, Image } from "react-bootstrap";
 import { FaFacebookF, FaInstagram, FaGoogle, FaReact, FaLine } from "react-icons/fa";
 import { FiTarget } from "react-icons/fi";
+import { useForm, ValidationError } from "@formspree/react";
 
 const App = () => {
+  const [state, handleSubmit] = useForm("xwpqykbw");
+  const [status, setStatus] = useState("");
+React.useEffect(() => {
+  if (state.succeeded) {
+    setStatus("送信が完了しました。ありがとうございます！");
+  } else if (state.errors && Object.keys(state.errors).length > 0) {
+    setStatus("送信に失敗しました。内容をご確認ください。");
+  } else {
+    setStatus("");
+  }
+}, [state]);
+
   return (
     <>
       {/* ナビゲーション */}
@@ -16,6 +29,7 @@ const App = () => {
             <Nav.Link href="#about">自己紹介</Nav.Link>
             <Nav.Link href="#skills">スキル</Nav.Link>
             <Nav.Link href="#challenge">これからの挑戦</Nav.Link>
+            <Nav.Link href="#contact">お問い合わせ</Nav.Link>
           </Nav>
         </Container>
       </Navbar>
@@ -76,10 +90,10 @@ const App = () => {
           </p>
           <Button
             variant="primary"
-            href="mailto:sayakaohara@example.com?subject=無料相談の問い合わせ"
+            href="#contact"
             style={{ padding: "1rem 2rem", fontSize: "1.5rem", fontWeight: "600" }}
           >
-            無料相談はこちら
+            問い合わせはこちら
           </Button>
         </Container>
       </section>
@@ -141,7 +155,6 @@ const App = () => {
             対応可能な内容
           </h3>
 
-          {/* 2列グリッドでアイコン＋説明 */}
           <Row style={{ fontSize: "1.3rem", lineHeight: 1.6 }}>
             <Col
               xs={6}
@@ -167,7 +180,6 @@ const App = () => {
             </Col>
 
             <Col xs={6} className="text-center mb-4">
-              {/* Yahooの代わりにターゲットアイコン */}
               <FiTarget size={80} color="#FF3300" />
               <p style={{ marginTop: "0.5rem" }}>Yahoo広告運用</p>
             </Col>
@@ -181,7 +193,6 @@ const App = () => {
               <p style={{ marginTop: "0.5rem" }}>LINE公式設定</p>
             </Col>
             <Col xs={6} className="text-center mb-4">
-              {/* Utageの代替アイコン */}
               <svg
                 width="80"
                 height="80"
@@ -207,7 +218,7 @@ const App = () => {
           </ul>
         </section>
 
-        {/* スキルと強みセクションを追加 */}
+        {/* スキルと強みセクション */}
         <section id="skills" className="mb-5">
           <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>スキルと強み</h2>
           <ul style={{ fontSize: "1.3rem", lineHeight: 1.7 }}>
@@ -244,28 +255,43 @@ const App = () => {
           </p>
         </section>
 
-        <div className="text-center mb-5">
-          <Button
-            variant="primary"
-            href="mailto:sayakaohara@example.com?subject=無料相談の問い合わせ"
-            style={{
-              paddingTop: "1.2rem",
-              paddingBottom: "1.2rem",
-              paddingRight: "2rem",
-              paddingLeft: "2rem",
-              fontSize: "1.5rem",
-            }}
-          >
-            無料相談はこちら
-          </Button>
-        </div>
+        {/* お問い合わせセクション */}
+        <section id="contact" className="mb-5">
+          <h2 style={{ fontSize: "2.2rem", fontWeight: "700", marginBottom: "1rem" }}>お問い合わせ</h2>
+          <form onSubmit={handleSubmit}>
+            <div className="mb-3">
+              <label htmlFor="name" className="form-label">お名前</label>
+              <input type="text" name="name" id="name" className="form-control" required />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="email" className="form-label">メールアドレス</label>
+              <input type="email" name="email" id="email" className="form-control" required />
+              <ValidationError prefix="Email" field="email" errors={state.errors} />
+            </div>
+            <div className="mb-3">
+              <label htmlFor="message" className="form-label">お問い合わせ内容</label>
+              <textarea name="message" id="message" className="form-control" rows={5} required />
+              <ValidationError prefix="Message" field="message" errors={state.errors} />
+            </div>
+            <Button
+              variant="primary"
+              type="submit"
+              disabled={state.submitting}
+              style={{ fontSize: "1.2rem", padding: "0.6rem 2rem" }}
+            >
+              送信
+            </Button>
+          </form>
+          {status && (
+            <Alert variant={status.includes("完了") ? "success" : "danger"} className="mt-3">
+              {status}
+            </Alert>
+          )}
+        </section>
       </Container>
 
       {/* フッター */}
-      <footer
-        className="bg-dark text-white text-center py-3"
-        style={{ fontSize: "1rem" }}
-      >
+      <footer className="bg-dark text-white text-center py-3" style={{ fontSize: "1rem" }}>
         © 2025 Sayaka-Web. All rights reserved.
       </footer>
     </>
