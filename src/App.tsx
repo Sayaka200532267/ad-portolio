@@ -39,9 +39,9 @@ const App = () => {
   loop
   playsInline
   style={{ position: "absolute", top: 0, left: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: -1 }}
-  src="/path/to/video.mp4"
+  src="/hero-image.mp4"
 >
-  <source src="/path/to/video.mp4" type="video/mp4" />
+  <source src="/hero-image.mp4" type="video/mp4" />
 </video>
 
         <Container className="d-flex flex-column justify-content-center align-items-center h-100">
