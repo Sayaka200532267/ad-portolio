@@ -257,6 +257,7 @@ React.useEffect(() => {
     <li>Canva、Figma、Adobe Illustrator（広告バナー・SNS画像作成）</li>
     <li>Google Analytics、Google Search Console、Google Ads</li>
     <li>Meta広告（Facebook, Instagram）管理画面</li>
+    <li>Google広告 管理画面</li>
     <li>LINE公式アカウント管理・UTAGE（予約管理システム）</li>
     <li>Excel、Google スプレッドシート（データ集計・レポート作成）</li>
     <li>Slack、Chatwork、Zoom（オンラインコミュニケーションツール）</li>
