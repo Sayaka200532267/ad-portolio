@@ -102,7 +102,7 @@ React.useEffect(() => {
       <Container style={{ maxWidth: 900 }}>
         <section id="problems" className="mb-5">
           <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>こんなお悩みありませんか？</h2>
-          <ul style={{ fontSize: "1.3rem", lineHeight: 1.6 }}>
+          <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
             <li>Meta広告やGoogle広告、Yahoo広告を始めたけど、思うように効果が出ない</li>
             <li>Web広告を始めたいけど、何から始めていいかわからない</li>
             <li>LPやLINEなど複数ツールが連携できず、成果につながらない</li>
@@ -112,7 +112,7 @@ React.useEffect(() => {
 
         <section id="improvements" className="mb-5">
           <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>こんな風に改善できます</h2>
-          <ul style={{ fontSize: "1.3rem", lineHeight: 1.6 }}>
+          <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
             <li>LPの内容やデザインを見直し、興味を引く形に整えます</li>
             <li>セールスコピーを改善して成約率アップを目指します</li>
             <li>ターゲティングとクリエイティブを最適化し、効率よく集客します</li>
@@ -133,7 +133,7 @@ React.useEffect(() => {
               />
             </Col>
             <Col md={8}>
-              <p style={{ fontSize: "1.3rem", lineHeight: 1.7 }}>
+              <p style={{ fontSize: "1.2rem", lineHeight: 1.7 }}>
                 Google広告の認定資格を取得し、Meta広告の基礎も学んでいるので、最新ノウハウを活かした広告運用が可能です。
                 初心者の方にもわかりやすく丁寧に説明し、ツール設定もサポート。
                 広告運用を通じて売上アップやファンづくりにつながる仕組みづくりをお手伝いします。
@@ -211,7 +211,7 @@ React.useEffect(() => {
           <h3 style={{ fontSize: "1.8rem", fontWeight: "600", marginTop: "1.5rem" }}>
             こんな方におすすめ
           </h3>
-          <ul style={{ fontSize: "1.3rem", lineHeight: 1.6 }}>
+          <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
             <li>広告を始めたけど成果が安定しない個人事業主・小規模チームの方</li>
             <li>複数ツールの連携や仕組みを整理したい方</li>
             <li>英語対応も視野に海外展開を考えている方</li>
@@ -221,7 +221,7 @@ React.useEffect(() => {
         {/* スキルと強みセクション */}
         <section id="skills" className="mb-5">
           <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>スキルと強み</h2>
-          <ul style={{ fontSize: "1.3rem", lineHeight: 1.7 }}>
+          <ul style={{ fontSize: "1.2rem", lineHeight: 1.7 }}>
             <li>
               <strong>広告運用関連スキル：</strong>Meta広告・Google広告の基礎知識と実務経験、広告アカウント設定、ターゲティング設定、効果測定とレポーティング
             </li>
@@ -248,7 +248,7 @@ React.useEffect(() => {
 
         <section id="challenge" className="mb-5">
           <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>スキルとこれからの挑戦</h2>
-          <p style={{ fontSize: "1.3rem", lineHeight: 1.7 }}>
+          <p style={{ fontSize: "1.2rem", lineHeight: 1.7 }}>
             現在はMeta広告の基礎と実務経験を積んでいる段階ですが、着実に成果を出せるよう日々勉強と実践を重ねています。
             Web制作のスキルも活かしながら、集客から売上まで一貫してサポートできる広告運用者を目指しています。
             今後は具体的な案件での成果を積み重ねていきますので、ぜひお気軽にご相談ください。

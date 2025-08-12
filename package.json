@@ -10,6 +10,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@canva/app-ui-kit": "^4.10.0",
     "@formspree/react": "^3.0.0",
     "bootstrap": "^5.3.7",
     "react": "^18.3.1",
