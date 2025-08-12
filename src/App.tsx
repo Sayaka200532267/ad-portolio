@@ -93,7 +93,7 @@ React.useEffect(() => {
             href="#contact"
             style={{ padding: "1rem 2rem", fontSize: "1.5rem", fontWeight: "600" }}
           >
-            問い合わせはこちら
+            お問い合わせはこちら
           </Button>
         </Container>
       </section>
