@@ -246,8 +246,25 @@ React.useEffect(() => {
           </ul>
         </section>
 
+  
+  {/* 対応可能内容（省略） */}
+
+  {/* ここに「使用可能なツール」セクションを追加 */}
+  <h3 style={{ fontSize: "1.8rem", fontWeight: "600", marginTop: "1.5rem", marginBottom: "1rem" }}>
+    使用可能なツール
+  </h3>
+  <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
+    <li>Canva、Figma、Adobe Illustrator（広告バナー・SNS画像作成）</li>
+    <li>Google Analytics、Google Search Console、Google Ads</li>
+    <li>Meta広告（Facebook, Instagram）管理画面</li>
+    <li>LINE公式アカウント管理・UTAGE（予約管理システム）</li>
+    <li>Excel、Google スプレッドシート（データ集計・レポート作成）</li>
+    <li>Slack、Chatwork、Zoom（オンラインコミュニケーションツール）</li>
+    <li>HTML/CSS、React（LP制作）</li>
+  </ul>
+
         <section id="challenge" className="mb-5">
-          <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>スキルとこれからの挑戦</h2>
+          <h2 style={{ fontSize: "2.2rem", fontWeight: "700", marginTop: "1.5rem"}}>スキルとこれからの挑戦</h2>
           <p style={{ fontSize: "1.2rem", lineHeight: 1.7 }}>
             現在はMeta広告の基礎と実務経験を積んでいる段階ですが、着実に成果を出せるよう日々勉強と実践を重ねています。
             Web制作のスキルも活かしながら、集客から売上まで一貫してサポートできる広告運用者を目指しています。
