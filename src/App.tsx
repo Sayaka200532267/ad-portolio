@@ -23,6 +23,8 @@ React.useEffect(() => {
       <Navbar bg="dark" variant="dark" expand="lg" className="mb-0">
         <Container>
           <Navbar.Brand href="#">広告運用ポートフォリオ</Navbar.Brand>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="me-auto" style={{ fontSize: "1.1rem" }}>
             <Nav.Link href="#problems">お悩み</Nav.Link>
             <Nav.Link href="#improvements">改善案</Nav.Link>
@@ -31,6 +33,7 @@ React.useEffect(() => {
             <Nav.Link href="#challenge">これからの挑戦</Nav.Link>
             <Nav.Link href="#contact">お問い合わせ</Nav.Link>
           </Nav>
+          </Navbar.Collapse>
         </Container>
       </Navbar>
 
