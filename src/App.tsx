@@ -72,25 +72,35 @@ React.useEffect(() => {
         </video>
 
         <Container className="d-flex flex-column justify-content-center align-items-center h-100">
-          <h1
-            style={{
-              textShadow: "2px 2px 6px rgba(0,0,0,0.7)",
-              fontSize: "3rem",
-              fontWeight: "bold",
-            }}
-          >
-            広告運用 × Web制作
-          </h1>
-          <p
-            style={{
-              textShadow: "1px 1px 4px rgba(0,0,0,0.6)",
-              fontSize: "1.5rem",
-              fontWeight: "600",
-              marginBottom: "1.5rem",
-            }}
-          >
-            集客からファネル設計、売上までワンストップでサポートします
-          </p>
+<h1
+  style={{
+    textShadow: "2px 2px 6px rgba(0,0,0,0.7)",
+    fontSize: "3rem",
+    fontWeight: "bold",
+  }}
+>
+  広告運用
+  <br className="d-block d-lg-none" />
+  ×
+  <br className="d-block d-lg-none" />
+  Web制作
+</h1>
+
+<p
+  style={{
+    textShadow: "1px 1px 4px rgba(0,0,0,0.6)",
+    fontSize: "1.5rem",
+    fontWeight: "600",
+    marginBottom: "1.5rem",
+  }}
+>
+  集客からファネル設計、
+  <br className="d-block d-lg-none" />
+  売上までワンストップで
+  <br className="d-block d-lg-none" />
+  サポートします
+</p>
+
           <Button
             variant="primary"
             href="#contact"
