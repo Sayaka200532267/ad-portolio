@@ -114,8 +114,8 @@ React.useEffect(() => {
       {/* コンテンツ部分 */}
       <Container style={{ maxWidth: 900 }}>
         <section id="problems" className="mb-5">
-          <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>こんなお悩みありませんか？</h2>
-          <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "700" }}>こんなお悩みありませんか？</h2>
+          <ul style={{ fontSize: "1rem", lineHeight: 1.6 }}>
             <li>Meta広告やGoogle広告、Yahoo広告を始めたけど、思うように効果が出ない</li>
             <li>Web広告を始めたいけど、何から始めていいかわからない</li>
             <li>LPやLINEなど複数ツールが連携できず、成果につながらない</li>
@@ -124,8 +124,8 @@ React.useEffect(() => {
         </section>
 
         <section id="improvements" className="mb-5">
-          <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>こんな風に改善できます</h2>
-          <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "700" }}>こんな風に改善できます</h2>
+          <ul style={{ fontSize: "1rem", lineHeight: 1.6 }}>
             <li>LPの内容やデザインを見直し、興味を引く形に整えます</li>
             <li>セールスコピーを改善して成約率アップを目指します</li>
             <li>ターゲティングとクリエイティブを最適化し、効率よく集客します</li>
@@ -134,7 +134,7 @@ React.useEffect(() => {
         </section>
 
         <section id="about" className="mb-5">
-          <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>はじめまして。Sayaka-Webと申します。</h2>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "700" }}>はじめまして。Sayaka-Webと申します。</h2>
           <Row className="align-items-center mt-3">
             <Col md={4} className="mb-3 mb-md-0 text-center">
               <Image
@@ -142,11 +142,11 @@ React.useEffect(() => {
                 roundedCircle
                 fluid
                 alt="Sayaka-Web プロフィール写真"
-                style={{ width: "250px", height: "250px", objectFit: "cover" }}
+                style={{ width: "180px", height: "180px", objectFit: "cover" }}
               />
             </Col>
             <Col md={8}>
-              <p style={{ fontSize: "1.2rem", lineHeight: 1.7 }}>
+              <p style={{ fontSize: "1rem", lineHeight: 1.7 }}>
                 Google広告の認定資格を取得し、Meta広告の基礎も学んでいるので、最新ノウハウを活かした広告運用が可能です。
                 初心者の方にもわかりやすく丁寧に説明し、ツール設定もサポート。
                 広告運用を通じて売上アップやファンづくりにつながる仕組みづくりをお手伝いします。
@@ -159,7 +159,7 @@ React.useEffect(() => {
 
           <h3
             style={{
-              fontSize: "2.2rem",
+              fontSize: "1.5rem",
               fontWeight: "700",
               marginTop: "1.5rem",
               marginBottom: "3rem",
@@ -168,7 +168,7 @@ React.useEffect(() => {
             対応可能な内容
           </h3>
 
-          <Row style={{ fontSize: "1.3rem", lineHeight: 1.6 }}>
+          <Row style={{ fontSize: "1rem", lineHeight: 1.6 }}>
             <Col
               xs={6}
               className="text-center mb-4"
@@ -187,25 +187,25 @@ React.useEffect(() => {
               </div>
               <p>Meta広告（Facebook/Instagram）</p>
             </Col>
-            <Col xs={6} className="text-center mb-4">
+            <Col xs={6} className="social-icon text-center mb-4">
               <FaGoogle size={80} style={{ color: "#4285F4" }} />
               <p style={{ marginTop: "0.5rem" }}>Google広告運用</p>
             </Col>
 
-            <Col xs={6} className="text-center mb-4">
+            <Col xs={6} className="social-icon text-center mb-4">
               <FiTarget size={80} color="#FF3300" />
               <p style={{ marginTop: "0.5rem" }}>Yahoo広告運用</p>
             </Col>
-            <Col xs={6} className="text-center mb-4">
+            <Col xs={6} className="social-icon text-center mb-4">
               <FaReact size={80} style={{ color: "#61DAFB" }} />
               <p style={{ marginTop: "0.5rem" }}>ReactでLP作成</p>
             </Col>
 
-            <Col xs={6} className="text-center mb-4">
+            <Col xs={6} className="social-icon text-center mb-4">
               <FaLine size={80} style={{ color: "#00B900" }} />
               <p style={{ marginTop: "0.5rem" }}>LINE公式設定</p>
             </Col>
-            <Col xs={6} className="text-center mb-4">
+            <Col xs={6} className="social-icon text-center mb-4">
               <svg
                 width="80"
                 height="80"
@@ -221,10 +221,10 @@ React.useEffect(() => {
             </Col>
           </Row>
 
-          <h3 style={{ fontSize: "2.2rem", fontWeight: "700", marginTop: "1.5rem" }}>
+          <h3 style={{ fontSize: "1.5rem", fontWeight: "700", marginTop: "1.5rem" }}>
             こんな方におすすめ
           </h3>
-          <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
+          <ul style={{ fontSize: "1rem", lineHeight: 1.6 }}>
             <li>広告を始めたけど成果が安定しない個人事業主・小規模チームの方</li>
             <li>複数ツールの連携や仕組みを整理したい方</li>
             <li>英語対応も視野に海外展開を考えている方</li>
@@ -233,8 +233,8 @@ React.useEffect(() => {
 
         {/* スキルと強みセクション */}
         <section id="skills" className="mb-5">
-          <h2 style={{ fontSize: "2.2rem", fontWeight: "700" }}>スキルと強み</h2>
-          <ul style={{ fontSize: "1.2rem", lineHeight: 1.7 }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "700" }}>スキルと強み</h2>
+          <ul style={{ fontSize: "1rem", lineHeight: 1.7 }}>
             <li>
               <strong>広告運用関連スキル：</strong>Meta広告・Google広告の基礎知識と実務経験、広告アカウント設定、ターゲティング設定、効果測定とレポーティング
             </li>
@@ -263,10 +263,10 @@ React.useEffect(() => {
   {/* 対応可能内容（省略） */}
 
   {/* ここに「使用可能なツール」セクションを追加 */}
-  <h3 style={{ fontSize: "2.2rem", fontWeight: "700", marginTop: "1.5rem", marginBottom: "1rem" }}>
+  <h3 style={{ fontSize: "1.5rem", fontWeight: "700", marginTop: "1.5rem", marginBottom: "1rem" }}>
     使用可能なツール
   </h3>
-  <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
+  <ul style={{ fontSize: "1rem", lineHeight: 1.6 }}>
     <li>Canva、Figma、Adobe Illustrator（広告バナー・SNS画像作成）</li>
     <li>Google Analytics、Google Search Console、Google Ads</li>
     <li>Meta広告（Facebook, Instagram）管理画面</li>
@@ -278,8 +278,8 @@ React.useEffect(() => {
   </ul>
 
         <section id="challenge" className="mb-5">
-          <h2 style={{ fontSize: "2.2rem", fontWeight: "700", marginTop: "1.5rem"}}>スキルとこれからの挑戦</h2>
-          <p style={{ fontSize: "1.2rem", lineHeight: 1.7 }}>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "700", marginTop: "1.5rem"}}>スキルとこれからの挑戦</h2>
+          <p style={{ fontSize: "1rem", lineHeight: 1.7 }}>
             現在はMeta広告の基礎と実務経験を積んでいる段階ですが、着実に成果を出せるよう日々勉強と実践を重ねています。
             Web制作のスキルも活かしながら、集客から売上まで一貫してサポートできる広告運用者を目指しています。
             今後は具体的な案件での成果を積み重ねていきますので、ぜひお気軽にご相談ください。
@@ -288,7 +288,7 @@ React.useEffect(() => {
 
         {/* お問い合わせセクション */}
         <section id="contact" className="mb-5">
-          <h2 style={{ fontSize: "2.2rem", fontWeight: "700", marginBottom: "1rem" }}>お問い合わせ</h2>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "700", marginBottom: "1rem" }}>お問い合わせ</h2>
           <form onSubmit={handleSubmit}>
             <div className="mb-3">
               <label htmlFor="name" className="form-label">お名前</label>
@@ -308,7 +308,7 @@ React.useEffect(() => {
               variant="primary"
               type="submit"
               disabled={state.submitting}
-              style={{ fontSize: "1.2rem", padding: "0.6rem 2rem" }}
+              style={{ fontSize: "1rem", padding: "0.6rem 2rem" }}
             >
               送信
             </Button>
