@@ -159,8 +159,8 @@ React.useEffect(() => {
 
           <h3
             style={{
-              fontSize: "1.8rem",
-              fontWeight: "600",
+              fontSize: "2.2rem",
+              fontWeight: "700",
               marginTop: "1.5rem",
               marginBottom: "3rem",
             }}
@@ -221,7 +221,7 @@ React.useEffect(() => {
             </Col>
           </Row>
 
-          <h3 style={{ fontSize: "1.8rem", fontWeight: "600", marginTop: "1.5rem" }}>
+          <h3 style={{ fontSize: "2.2rem", fontWeight: "700", marginTop: "1.5rem" }}>
             こんな方におすすめ
           </h3>
           <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
@@ -263,7 +263,7 @@ React.useEffect(() => {
   {/* 対応可能内容（省略） */}
 
   {/* ここに「使用可能なツール」セクションを追加 */}
-  <h3 style={{ fontSize: "1.8rem", fontWeight: "600", marginTop: "1.5rem", marginBottom: "1rem" }}>
+  <h3 style={{ fontSize: "2.2rem", fontWeight: "700", marginTop: "1.5rem", marginBottom: "1rem" }}>
     使用可能なツール
   </h3>
   <ul style={{ fontSize: "1.2rem", lineHeight: 1.6 }}>
