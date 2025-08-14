@@ -134,7 +134,7 @@ React.useEffect(() => {
         </section>
 
         <section id="about" className="mb-5">
-          <h2 style={{ fontSize: "1.5rem", fontWeight: "700" }}>はじめまして。Sayaka-Webと申します。</h2>
+          <h2 style={{ fontSize: "1.5rem", fontWeight: "700" }}>はじめまして。<br className="d-block d-lg-none" />Sayaka-Webと申します。</h2>
           <Row className="align-items-center mt-3">
             <Col md={4} className="mb-3 mb-md-0 text-center">
               <Image
