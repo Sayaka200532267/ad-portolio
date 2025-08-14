@@ -43,7 +43,7 @@ React.useEffect(() => {
         className="text-center mb-0"
         style={{ fontWeight: "bold", fontSize: "1.3rem" }}
       >
-        このサイトはSayaka-WebがReactにて制作しています。
+        このサイトはSayaka-Webが<br className="d-block d-lg-none" />Reactにて制作しています。
       </Alert>
 
       {/* ヒーローセクション（動画背景） */}
