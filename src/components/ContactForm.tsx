@@ -19,7 +19,7 @@ const ContactForm: React.FC = () => {
 
   return (
     <Container className="d-flex justify-content-center">
-      <div className="contact-form-container">
+      <div id="contact-form"className="contact-form-container">
         <h3>お問い合わせ</h3>
         <form onSubmit={handleSubmit}>
           <div className="mb-3">

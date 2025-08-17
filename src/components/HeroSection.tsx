@@ -52,13 +52,18 @@ const HeroSection: React.FC = () => (
         サポートします
       </motion.p>
 
-      <Button
-        variant="primary"
-        href="#contact"
-        className="hero-button"
-      >
-        お問い合わせはこちら
-      </Button>
+<Button
+  variant="primary"
+  className="hero-button"
+  onClick={() => {
+    const contactSection = document.getElementById("contact-form");
+    if (contactSection) {
+      contactSection.scrollIntoView({ behavior: "smooth" });
+    }
+  }}
+>
+  お問い合わせはこちら
+</Button>
     </Container>
   </section>
 );

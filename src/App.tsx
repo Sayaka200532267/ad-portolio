@@ -13,6 +13,7 @@ import MainSection from "./components/MainSection";
 import RecommendationAndSkills from "./components/RecommendationAndSkills";
 import ToolsAndSkills from "./components/ToolsAndSkills";
 import "./App.css";
+import { Analytics } from "@vercel/analytics/react"
 
 // SectionProps に titleFontSize を追加
 export interface SectionProps {

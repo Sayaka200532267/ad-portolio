@@ -63,7 +63,7 @@ const MainSection: React.FC = () => (
         <ul className="main-list">
           <li>
             <span className="text">
-             🌀 Meta広告やGoogle広告、<br />Yahoo広告を始めたけど、思うように効果が出ない
+             🌀 Meta広告やGoogle広告、<br />Yahoo広告を始めたけど、<br />思うように効果が出ない
             </span>
           </li>
           <li>
