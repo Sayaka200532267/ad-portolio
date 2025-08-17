@@ -71,10 +71,11 @@ const ToolsAndChallenge: React.FC = () => {
           className="text-center"
           style={{ fontSize: "1rem", lineHeight: 1.9 }}
         >
-          Web制作のスキルも活かしながら、<br />
-          集客から売上まで一貫してサポートできる広告運用者を目指しています。<br />
-          今後は具体的な案件での成果を積み重ねていきますので、<br />
-          ぜひお気軽にご相談ください。
+Web制作のスキルを活かしながら、<br />
+集客から売上まで一貫してサポートできる<span className="mobile-break"></span>広告運用者を目指しています。<br />
+Web制作だけでなく、広告運用も実践中です。<br />
+お気軽にご相談ください。
+
         </p>
       </section>
     </Container>

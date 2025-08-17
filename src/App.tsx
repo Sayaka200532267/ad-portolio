@@ -10,7 +10,7 @@ import AboutSection from "./components/AboutSection";
 import Footer from "./components/Footer";
 import ContactForm from "./components/ContactForm";
 import MainSection from "./components/MainSection";
-import RecommendationAndSkills from "./components/RecommendationAndSkills";
+import SkillsAccordion from "./components/SkillsAccordion";
 import ToolsAndSkills from "./components/ToolsAndSkills";
 import "./App.css";
 import { Analytics } from "@vercel/analytics/react"
@@ -46,7 +46,7 @@ const App: React.FC = () => {
       <HeroSection />
       <MainSection />
       <AboutSection />
-      <RecommendationAndSkills />
+      <SkillsAccordion />
       <ToolsAndSkills />
       <ContactForm />
       <Footer />

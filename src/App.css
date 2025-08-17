@@ -154,7 +154,7 @@
 }
 
 .mobile-break {
-  display: inline;
+  display: none;
 }
 
 /* PC版 */
@@ -287,6 +287,17 @@
     margin-top: 1.2rem;
   }
 
+ 
+  .custom-accordion-header {
+    flex-direction: column; /* flex内で縦並びに */
+    align-items: center;
+  }
+    .custom-accordion ul li {
+    margin-bottom: 1rem; /* 各項目の間隔 */
+    line-height: 2.2; /* 行間を広めに */
+    text-align: center; /* 左寄せで読みやすく */
+    list-style-type: none;
+  }
   .mobile-break {
     display: block;
   }
