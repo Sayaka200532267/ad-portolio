@@ -1,4 +1,3 @@
-
 @media (max-width: 767.98px) {
     /* Hero以外の本文フォント縮小 */
     main, section:not(:first-of-type), footer {
@@ -22,3 +21,274 @@
       margin-left: 0.5rem;
     }
   }
+
+/* =========================
+   HeroSection
+   ========================= */
+.hero-videoposition-relative {
+  position: relative;
+  text-align: center;
+  color: white;
+  margin-bottom: 3rem;
+  height: 60vh;
+  overflow: hidden;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+.hero-title {
+  font-size: 3rem;
+  font-weight: bold;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.7);
+}
+
+.hero-subtitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.6);
+  margin-bottom: 1.5rem;
+}
+
+.btn.hero-button {
+  padding: 1rem 2rem;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+/* =========================
+   MainContent リスト
+   ========================= */
+.main-list {
+  font-size: 1.2rem;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+  padding-left: 0;
+  list-style: none;
+  text-align: center;
+}
+
+.main-list li {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+  flex-direction: row; /* PCは横並び */
+}
+
+.main-list li span.icon {
+  font-size: 2rem;
+  margin-right: 0.5rem;
+  margin-top: 0.1rem;
+  flex-shrink: 0;
+}
+
+/* PC版とスマホ版の表示切替 */
+.pc-block {
+  display: block;
+}
+
+.mobile-block {
+  display: none;
+}
+
+/* =========================
+   AboutSection
+   ========================= */
+.about-icon {
+  width: 80px;
+  height: 80px;
+}
+
+.about-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 30px;
+  text-align: center;
+}
+
+.about-section-subtitle {
+  font-size: 1rem;
+  line-height: 1.7;
+  margin-bottom: 0;
+  white-space: normal;
+}
+
+.about-icon-row-horizontal {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.about-icon-row-horizontal svg {
+  width: 80px;
+  height: 80px;
+}
+
+/* =========================
+   ContactForm
+   ========================= */
+.contact-form-container {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 2rem;
+  padding: 1.5rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #343a40;
+  box-sizing: border-box;
+  color: white;
+}
+
+.contact-form-container h3 {
+  text-align: center;
+  margin-bottom: 1.2rem;
+}
+
+.mobile-break {
+  display: inline;
+}
+
+/* PC版 */
+.pc-block .main-list li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.pc-block .main-list li .icon {
+  font-size: 1.3rem;
+  margin-right: 0.5rem;
+}
+
+
+/* アコーディオン全体の幅を狭める */
+.custom-accordion {
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* 見出し中央揃え + 初期色 */
+.accordion-button {
+  display: flex !important;
+  justify-content: center !important;
+  text-align: center !important;
+  background-color: #9abff8 !important;
+  color: white !important;
+  font-weight: 600;
+}
+
+/* 開いたときの背景色（薄緑） */
+.accordion-button:not(.collapsed) {
+  background-color: white  !important;
+  color: #9abff8 !important;
+}
+
+/* 矢印の位置そのまま */
+.accordion-button::after {
+  position: absolute !important;
+  right: 1.25rem !important;
+}
+
+
+/* =========================
+   Footer
+   ========================= */
+.footer {
+  font-size: 1rem;
+  background-color: #000;
+  color: #fff;
+  text-align: center;
+  padding: 1rem 0;
+}
+
+
+@media (max-width: 767.98px) {
+  .pc-block {
+    display: none !important;
+  }
+
+  .mobile-block {
+    display: block !important;
+    text-align: center;
+  }
+
+  /* ヒーロー文字サイズ調整 */
+  .hero-title {
+    font-size: 2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+  }
+
+  .hero-button {
+    font-size: 1.5rem;
+    padding: 1rem 2rem;
+  }
+
+  .contact-form-container {
+    width: 90%;
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .about-section-subtitle {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    text-align: center;
+  }
+  .about-icon-col svg,
+  .about-icon-col svg > path {
+    width: 60px !important;
+    height: 60px !important;
+    margin: 0;
+  }
+  .about-icon-row-horizontal svg {
+    width: 50px !important;
+    height: 50px !important;
+  }
+
+  .main-list {
+    font-size: 0.95rem;
+    text-align: center;
+    padding-left: 0;
+    list-style: none;
+  }
+
+  .mobile-block .main-list li {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 1rem;
+    gap: 0.5rem;
+  }
+
+  /* 星アイコンの色を黄色に */
+  .mobile-block .main-list li .icon svg {
+    color: #f9ca24;
+    font-size: 1.3rem;
+  }
+
+  .footer {
+    font-size: 0.85rem;
+  }
+
+  .contact-form-container h3 {
+    margin-top: 1.2rem;
+  }
+
+  .mobile-break {
+    display: block;
+  }
+}
+
