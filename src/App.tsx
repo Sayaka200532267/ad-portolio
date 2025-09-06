@@ -41,7 +41,7 @@ const App: React.FC = () => {
     <>
       <Header />
       <Alert variant="info" className="site-info-alert text-center mb-0">
-        このサイトはSayaka-Webが<br className="d-block d-lg-none" />Reactにて制作しています。
+        このサイトはさやか Ads & Funnelが<br className="d-block d-lg-none" />Reactにて制作しています。
       </Alert>
       <HeroSection />
       <MainSection />
