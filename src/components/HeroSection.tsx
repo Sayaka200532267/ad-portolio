@@ -11,7 +11,7 @@ const textVariants = {
 const HeroSection: React.FC = () => (
   <section
     id="hero"
-    className="hero-videoposition-relative text-center text-white mb-5"
+    className="hero-video-relative text-center text-white mb-5"
   >
     <video
       autoPlay

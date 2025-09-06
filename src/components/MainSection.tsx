@@ -59,7 +59,7 @@ const MainSection: React.FC = () => (
           スマホ版（アイコン左・テキスト右、中央寄せ）
     ====================== */}
     <div className="mobile-block">
-      <Section id="problems" title="こんなお悩みありませんか？" titleFontSize="1.5rem">
+      <Section id="problems" title="こんなお悩みありませんか？" titleFontSize="1.7rem">
         <ul className="main-list">
           <li>
             <span className="text">
@@ -85,7 +85,7 @@ const MainSection: React.FC = () => (
         </ul>
       </Section>
 
-      <Section id="improvements" title="こんな風に改善できます" titleFontSize="1.5rem">
+      <Section id="improvements" title="こんな風に改善できます" titleFontSize="1.7rem">
         <ul className="main-list">
        {/* スマホ版改善例 */}
 <li>

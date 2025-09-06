@@ -3,7 +3,7 @@ import "../App.css";
 
 const Footer: React.FC = () => (
   <footer className="footer">
-    © 2025 Sayaka-Web. All rights reserved.
+    © 2025 さやか@Ads & Funnel. All rights reserved.
   </footer>
 );
 

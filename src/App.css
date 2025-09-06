@@ -1,36 +1,13 @@
-@media (max-width: 767.98px) {
-    /* Hero以外の本文フォント縮小 */
-    main, section:not(:first-of-type), footer {
-      font-size: 0.9rem;
-    }
-
-    /* 見出し縮小 */
-    main h2, section:not(:first-of-type) h2, footer h2,
-    main h3, section:not(:first-of-type) h3, footer h3 {
-      font-size: 1.2rem;
-    }
-
-    /* SNSアイコン縮小 */
-    .social-icon {
-      width: 28px !important;
-      height: 28px !important;
-    }
-
-    /* アイコン間隔を少し狭く */
-    .social-icon + .social-icon {
-      margin-left: 0.5rem;
-    }
-  }
-
 /* =========================
    HeroSection
    ========================= */
-.hero-videoposition-relative {
+.hero-video-relative {
   position: relative;
   text-align: center;
   color: white;
+  margin-top: 0;
   margin-bottom: 3rem;
-  height: 60vh;
+  height: 80vh;
   overflow: hidden;
 }
 
@@ -57,253 +34,235 @@
   margin-bottom: 1.5rem;
 }
 
-.btn.hero-button {
+.btn.hero-button, .btn.contact-button {
   padding: 1rem 2rem;
   font-size: 1.2rem;
   font-weight: 600;
 }
 
 /* =========================
-   MainContent リスト
-   ========================= */
-.main-list {
-  font-size: 1.2rem;
-  line-height: 1.6;
-  max-width: 700px;
-  margin: 0 auto;
-  padding-left: 0;
-  list-style: none;
-  text-align: center;
-}
-
-.main-list li {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1rem;
-  flex-direction: row; /* PCは横並び */
-}
-
-.main-list li span.icon {
-  font-size: 2rem;
-  margin-right: 0.5rem;
-  margin-top: 0.1rem;
-  flex-shrink: 0;
-}
-
-/* PC版とスマホ版の表示切替 */
-.pc-block {
-  display: block;
-}
-
-.mobile-block {
-  display: none;
-}
-
-/* =========================
    AboutSection
    ========================= */
-.about-icon {
-  width: 80px;
-  height: 80px;
-}
-
 .about-section-title {
   font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 30px;
   text-align: center;
+  font-weight: bold;
 }
 
 .about-section-subtitle {
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 0;
-  white-space: normal;
-}
-
-.about-icon-row-horizontal {
-  display: flex;
-  justify-content: center;
-  gap: 0.5rem;
-}
-
-.about-icon-row-horizontal svg {
-  width: 80px;
-  height: 80px;
+  white-space: pre-line;
 }
 
 /* =========================
-   ContactForm
+   リストの先頭マークを消す
    ========================= */
-.contact-form-container {
-  width: 100%;
-  max-width: 500px;
-  margin: 0 auto 2rem;
-  padding: 1.5rem;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  background-color: #9abff8;
-  box-sizing: border-box;
-  color: white;
+ul {
+  list-style: none;
+  padding-left: 0;
+  margin-left: 0;
 }
 
-.contact-form-container h3 {
-  text-align: center;
-  margin-bottom: 1.2rem;
-}
+/* =========================
+   PC / スマホ切り替え用
+   ========================= */
+.pc-block { display: block; }
+.mobile-block { display: none; }
 
-.mobile-break {
-  display: none;
-}
-
-/* PC版 */
-.pc-block .main-list li {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1rem;
+.pc-block .main-list li span {
+  font-size: 1.1rem;
+  line-height: 1.6;
 }
 
 .pc-block .main-list li .icon {
-  font-size: 1.3rem;
   margin-right: 0.5rem;
 }
 
+.mobile-block .main-list li .text {
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
 
-/* アコーディオン全体の幅を狭める */
+/* =========================
+   Accordion修正版
+   ========================= */
 .custom-accordion {
-  max-width: 700px;
+  max-width: 600px;
   margin: 0 auto;
 }
 
-/* 見出し中央揃え + 初期色 */
-.accordion-button {
-  display: flex !important;
-  justify-content: center !important;
-  text-align: center !important;
-  background-color: #9abff8 !important;
-  color: white !important;
+/* 開閉状態に関係なく色を出す */
+.custom-accordion .accordion-button {
+  background-color: #007bff;
+  color: white;
   font-weight: 600;
+  text-align: center;
 }
 
-/* 開いたときの背景色（薄緑） */
-.accordion-button:not(.collapsed) {
-  background-color: white  !important;
-  color: #9abff8 !important;
+/* collapsed 状態も同じ色 */
+.custom-accordion .accordion-button.collapsed {
+  background-color: #458ddb;
+  color: white;
 }
 
-/* 矢印の位置そのまま */
-.accordion-button::after {
-  position: absolute !important;
-  right: 1.25rem !important;
+/* アイコンも白に統一 */
+.custom-accordion .accordion-button svg {
+  color: white;
 }
-    .custom-accordion ul li {
-    text-align: center; 
-    list-style-type: none;
-    line-height: 2.5; 
-  }
+
+/* 中身中央寄せ */
+.custom-accordion .accordion-body ul {
+  text-align: center;
+  padding-left: 0;
+  list-style: none;
+}
+
+.custom-accordion .accordion-body ul li {
+  display: inline-block;
+  margin-bottom: 0.8rem;
+  line-height: 1.3;
+}
+
+/* =========================
+   Header
+   ========================= */
+header {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+header .logo {
+  font-weight: bold;
+  font-size: 1.5rem;
+}
+
+header nav {
+  display: flex;
+  gap: 1.5rem;
+}
+
+header nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  text-decoration: underline;
+}
 
 /* =========================
    Footer
    ========================= */
-.footer {
-  font-size: 1rem;
-  background-color: #000;
-  color: #fff;
+footer.footer {
+  background-color: #1f1f1f;
+  color: white;
+  padding: 2rem 1rem;
   text-align: center;
-  padding: 1rem 0;
+  font-size: 0.9rem;
 }
 
+footer.footer a {
+  color: #f9ca24;
+  text-decoration: none;
+  margin: 0 0.5rem;
+}
 
+footer.footer a:hover {
+  text-decoration: underline;
+}
+
+footer.footer p {
+  margin: 0.5rem 0;
+}
+
+/* =========================
+   メディアクエリ: スマホ
+   ========================= */
 @media (max-width: 767.98px) {
-  .pc-block {
-    display: none !important;
-  }
-
-  .mobile-block {
-    display: block !important;
-    text-align: center;
-  }
-
-  /* ヒーロー文字サイズ調整 */
-  .hero-title {
-    font-size: 2rem;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-button {
-    font-size: 1.5rem;
-    padding: 1rem 2rem;
-  }
-
-  .contact-form-container {
-    width: 90%;
-    padding: 0.8rem 1rem;
-    margin-bottom: 1rem;
-  }
-
-  .about-section-subtitle {
-    font-size: 0.9rem;
-    line-height: 1.5;
-    text-align: center;
-  }
-  .about-icon-col svg,
-  .about-icon-col svg > path {
-    width: 60px !important;
-    height: 60px !important;
-    margin: 0;
-  }
-  .about-icon-row-horizontal svg {
-    width: 50px !important;
-    height: 50px !important;
-  }
-
-  .main-list {
-    font-size: 0.95rem;
-    text-align: center;
-    padding-left: 0;
-    list-style: none;
-  }
-
-  .mobile-block .main-list li {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: center;
-    margin-bottom: 1rem;
+  header {
+    flex-direction: column;
+    align-items: center;
     gap: 0.5rem;
   }
 
-  /* 星アイコンの色を黄色に */
-  .mobile-block .main-list li .icon svg {
-    color: #f9ca24;
-    font-size: 1.3rem;
+  header nav {
+    flex-direction: column;
+    gap: 0.3rem;
+    align-items: center;
   }
 
-  .footer {
+  footer.footer {
     font-size: 0.85rem;
   }
 
-  .contact-form-container h3 {
-    margin-top: 1.2rem;
+  .pc-block { display: none !important; }
+  .mobile-block { display: block !important; text-align: center; }
+
+  /* Hero */
+  .hero-title { font-size: 2rem !important; }
+  .hero-subtitle { font-size: 1rem !important; }
+  .hero-video-relative {
+    height: 70vh !important;
+    margin-bottom: 2rem !important;
   }
 
- 
-  .custom-accordion-header {
-    flex-direction: column; /* flex内で縦並びに */
-    align-items: center;
+  .btn.hero-button, .btn.contact-button {
+    font-size: 0.8rem !important;
+    padding: 0.6rem 1.2rem !important;
   }
-    .custom-accordion ul li {
-    margin-bottom: 1rem; /* 各項目の間隔 */
-    line-height: 1.3;/* 行間を広めに */
-    text-align: center; /* 左寄せで読みやすく */
-    list-style-type: none;
+
+  /* AboutSection */
+  .about-section-subtitle {
+    font-size: 0.9rem !important;
+    line-height: 1.5 !important;
+    text-align: center !important;
+    display: block !important;
+    height: auto !important;
+    white-space: pre-line !important;
   }
-  .mobile-break {
-    display: block;
+
+  .about-icon-col svg,
+  .about-icon-col svg > path { width: 60px !important; height: 60px !important; margin: 0; }
+  .about-icon-row-horizontal svg { width: 50px !important; height: 50px !important; }
+
+  .main-list {
+    font-size: 0.95rem !important;
+    text-align: center !important;
+  }
+
+  .mobile-block .main-list li {
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 1rem !important;
+    line-height: 1.3 !important;
+  }
+
+  .mobile-break { display: block !important; }
+
+  /* Accordion */
+  .custom-accordion .accordion-button {
+    flex-direction: column !important;
+    align-items: center !important;
+    text-align: center !important;
+  }
+  .custom-accordion .accordion-body ul {
+    padding-left: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    text-align: center !important;
+  }
+  .custom-accordion .accordion-body ul li {
+    display: block !important;
+    text-align: center !important;
+    margin-bottom: 0.8rem !important;
+    line-height: 1.3 !important;
   }
 }
-
