@@ -23,7 +23,7 @@ const AboutSection: React.FC = () => (
   <Container style={{ maxWidth: 900 }} className="about-section-container">
     <section id="about" className="mb-5">
       <h2 className="about-section-title">
-        はじめまして。<br className="d-block d-md-none" /> Sayaka-Webと申します。
+        はじめまして。<br className="d-block d-md-none" /> さやか@Ads & Funnelと申します。
       </h2>
 
       <Row className="align-items-center mt-3">
