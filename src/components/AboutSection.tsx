@@ -18,25 +18,23 @@ const iconVariants = {
 const AboutSection: React.FC = () => (
   <Container style={{ maxWidth: 900 }} className="about-section-container">
     <section id="about" className="mb-5">
+      <h2 className="about-section-title">
+        はじめまして。<br className="d-block d-md-none" /> Sayaka-Webと申します。
+      </h2>
 
-      {/* =========================
-            PC版
-      ========================= */}
-      <div className="pc-block">
-        <h2 className="about-section-title">
-          はじめまして。さやか@Ads & Funnelと申します。
-        </h2>
-        <Row className="align-items-center mt-3">
-          <Col md={4} className="text-center mb-3 mb-md-0">
-            <Image
-              src="/Sayaka-ad.png"
-              roundedCircle
-              fluid
-              alt="Sayaka-ad プロフィール写真"
-              style={{ width: "180px", height: "180px", objectFit: "cover" }}
-            />
-          </Col>
-          <Col md={8}>
+      <Row className="align-items-center mt-3">
+        <Col md={4} className="mb-3 mb-md-0 text-center">
+          <Image
+            src="/sayaka-web.png"
+            roundedCircle
+            fluid
+            alt="Sayaka-Web プロフィール写真"
+            style={{ width: "180px", height: "180px", objectFit: "cover" }}
+          />
+        </Col>
+
+        <Col md={8}>
+          <div className="d-none d-md-block">
             <p className="about-section-subtitle">
               Google広告の認定資格を取得し、Meta広告の基礎も学んでいるので、最新ノウハウを活かした広告運用が可能です。<br />
               初心者の方にもわかりやすく丁寧に説明し、ツール設定もサポート。<br />
