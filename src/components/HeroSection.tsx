@@ -8,6 +8,8 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 2 } },
 };
 
+const email = "sayakaohara@outlook.com"; 
+
 const HeroSection: React.FC = () => (
   <section
     id="hero"
@@ -52,18 +54,19 @@ const HeroSection: React.FC = () => (
         サポートします
       </motion.p>
 
-<Button
-  
-  className="hero-button"
-  onClick={() => {
-    const contactSection = document.getElementById("contact-form");
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: "smooth" });
-    }
-  }}
->
-  お問い合わせはこちら
-</Button>
+  <Button className="hero-button"  style={{
+    backgroundColor: "#458ddb",
+    color: "white",
+    fontSize: "1.2rem",
+    padding: "1rem 2rem",
+    border: "none",
+    marginTop: "1.5rem"
+    }}
+    href={`mailto:${email}?subject=お問い合わせ&body=こんにちは、`}
+    size="lg"
+  >
+    お問い合わせはこちら
+  </Button>
     </Container>
   </section>
 );
