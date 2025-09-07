@@ -214,10 +214,12 @@ footer.footer p {
     margin-bottom: 2rem !important;
   }
 
-  .btn.hero-button, .btn.contact-button {
+  .btn.hero-button {
     font-size: 0.8rem !important;
     padding: 0.6rem 1.2rem !important;
+
   }
+
 
   /* AboutSection */
   .about-section-subtitle {

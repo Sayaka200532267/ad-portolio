@@ -18,39 +18,42 @@ const iconVariants = {
 const AboutSection: React.FC = () => (
   <Container style={{ maxWidth: 900 }} className="about-section-container">
     <section id="about" className="mb-5">
-      <h2 className="about-section-title">
-        はじめまして。<br className="d-block d-md-none" /> Sayaka-Webと申します。
-      </h2>
+      {/* =========================
+            PC版
+      ========================= */}
+      <div className="pc-block">
+        <h2 className="about-section-title">
+          はじめまして。さやか@Ads & Funnelと申します。
+        </h2>
 
-      <Row className="align-items-center mt-3">
-        <Col md={4} className="mb-3 mb-md-0 text-center">
-          <Image
-            src="/Sayaka-ad.png"
-            roundedCircle
-            fluid
-            alt="Sayaka-ad プロフィール写真"
-            style={{ width: "180px", height: "180px", objectFit: "cover" }}
-          />
-        </Col>
-
-        <Col md={8}>
-          <div className="d-none d-md-block">
+        <Row className="align-items-center mt-3">
+          <Col md={4} className="mb-3 mb-md-0 text-center">
+            <Image
+              src="/Sayaka-ad.png"
+              roundedCircle
+              fluid
+              alt="Sayaka-ad プロフィール写真"
+              style={{ width: "180px", height: "180px", objectFit: "cover" }}
+            />
+          </Col>
+          <Col md={8}>
             <p className="about-section-subtitle">
               Google広告の認定資格を取得し、Meta広告の基礎も学んでいるので、最新ノウハウを活かした広告運用が可能です。<br />
               初心者の方にもわかりやすく丁寧に説明し、ツール設定もサポート。<br />
               広告運用を通じて売上アップやファンづくりにつながる仕組みづくりをお手伝いします。
             </p>
-          </div>
-        </Col>
-      </Row>
+          </Col>
+        </Row>
+      </div>
 
       {/* =========================
             スマホ版
       ========================= */}
       <div className="mobile-block">
-        <h3 className="about-section-title">
+        <h2 className="about-section-title text-center">
           はじめまして。<br />さやか@Ads & Funnelと<br />申します。
-        </h3>
+        </h2>
+
         <Row className="align-items-center mt-3">
           <Col xs={12} className="text-center mb-3">
             <Image
@@ -91,7 +94,7 @@ const AboutSection: React.FC = () => (
         whileInView="visible"
         viewport={{ once: true }}
       >
-        {/** 各アイコン **/}
+        {/* 各アイコン */}
         <Col xs={6} md={6} className="mb-4 about-icon-col">
           <motion.div variants={iconVariants}>
             <FaFacebookF size={80} color="#3b5998" />

@@ -53,7 +53,7 @@ const HeroSection: React.FC = () => (
       </motion.p>
 
 <Button
-  variant="primary"
+  
   className="hero-button"
   onClick={() => {
     const contactSection = document.getElementById("contact-form");

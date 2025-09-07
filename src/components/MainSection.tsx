@@ -59,7 +59,13 @@ const MainSection: React.FC = () => (
           スマホ版（アイコン左・テキスト右、中央寄せ）
     ====================== */}
     <div className="mobile-block">
-      <Section id="problems" title="こんなお悩みありませんか？" titleFontSize="1.7rem">
+      <Section id="problems" title={
+    <>
+      こんなお悩み
+      <br />
+      ありませんか？
+    </>
+  } titleFontSize="1.7rem">
         <ul className="main-list">
           <li>
             <span className="text">
@@ -74,7 +80,7 @@ const MainSection: React.FC = () => (
           </li>
           <li>
              <span className="text">
-              🌀 LPやLINEなど複数ツールが連携できず、<br />成果につながらない
+              🌀 LPやLINEなど<br />複数ツールが連携できず、<br />成果につながらない
             </span>
           </li>
           <li>

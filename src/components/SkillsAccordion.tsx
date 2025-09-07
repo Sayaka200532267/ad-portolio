@@ -48,9 +48,9 @@ const SkillsAccordion: React.FC = () => {
             <Accordion.Header className="custom-accordion-header">広告運用関連スキル</Accordion.Header>
             <Accordion.Body className="text-center">
               <ul>
-                <li><FaFacebookF style={{ marginRight: "0.4rem" }} /><FaInstagram style={{ marginRight: "0.4rem" }} />Meta広告</li>
-                <li><FaGoogle style={{ marginRight: "0.4rem" }} />広告アカウント設定、ターゲティング設定</li>
-                <li><AiOutlineBarChart style={{ marginRight: "0.4rem" }} />効果測定とレポーティング</li>
+                <li><FaFacebookF style={{ marginRight: "0.2rem" }} /><FaInstagram style={{ marginRight: "0.4rem" }} />Meta広告</li>
+                <li><FaGoogle style={{ marginRight: "0.4rem", marginLeft: "0.8rem" }} />広告アカウント設定、ターゲティング設定</li>
+                <li><AiOutlineBarChart style={{ marginRight: "0.4rem",marginLeft: "0.8rem" }} />効果測定とレポーティング</li>
               </ul>
             </Accordion.Body>
           </Accordion.Item>
@@ -70,11 +70,11 @@ const SkillsAccordion: React.FC = () => {
             <Accordion.Body className="text-center">
               <ul>
                 <li>
-                  <SiHtml5 style={{ marginRight: "0.4rem" }} /> HTML
-                  <SiCss3 style={{ marginLeft: "0.8rem", marginRight: "0.4rem" }} /> CSS
-                  <SiJavascript style={{ marginLeft: "0.8rem", marginRight: "0.4rem" }} /> JavaScript
-                  <FaReact style={{ marginLeft: "0.8rem", marginRight: "0.4rem" }} /> React
-                  を用いたLP制作や広告ランディングページの最適化
+                  <SiHtml5 style={{ marginRight: "0.2rem" }} /> HTML
+                  <SiCss3 style={{ marginLeft: "0.8rem", marginRight: "0.2rem" }} /> CSS
+                  <SiJavascript style={{ marginLeft: "0.8rem", marginRight: "0.2rem" }} /> JavaScript
+                  <FaReact style={{ marginLeft: "0.8rem", marginRight: "0.2rem" }} /> React
+                  を用いたLP制作や<br />広告ランディングページの最適化
                 </li>
               </ul>
             </Accordion.Body>
@@ -85,9 +85,9 @@ const SkillsAccordion: React.FC = () => {
             <Accordion.Body className="text-center">
               <ul>
                 <li>
-                  <SiCanva style={{ marginRight: "0.4rem" }} /> Canva
+                  <SiCanva style={{ marginRight: "0.2rem" }} /> Canva
                   <SiFigma style={{ marginLeft: "0.8rem", marginRight: "0.4rem" }} /> Figma
-                  <SiAdobeillustrator style={{ marginLeft: "0.8rem", marginRight: "0.4rem" }} /> Illustratorを用いた広告バナーやSNS用画像作成
+                  <SiAdobeillustrator style={{ marginLeft: "0.8rem", marginRight: "0.2rem" }} /> Illustratorを用いた広告バナーやSNS用画像作成
                 </li>
                 <li><FaPaintBrush style={{ marginRight: "0.4rem" }} />クリエイティブ制作のサポート</li>
               </ul>
@@ -99,7 +99,7 @@ const SkillsAccordion: React.FC = () => {
             <Accordion.Body className="text-center">
               <ul>
                 <li><FaComments style={{ marginRight: "0.4rem" }} />クライアントとのヒアリングや課題整理</li>
-                <li><FaHandshake style={{ marginRight: "0.4rem" }} />わかりやすい説明と連携調整</li>
+                <li><FaHandshake style={{ marginLeft: "0.8rem", marginRight: "0.4rem" }} />わかりやすい説明と連携調整</li>
               </ul>
             </Accordion.Body>
           </Accordion.Item>
@@ -217,16 +217,22 @@ const SkillsAccordion: React.FC = () => {
 
      <div className="contact-message text-center mt-5 mb-3">
   <p>
-    📧 まずはメールでお気軽にご相談ください。
+    📧 まずはメールで<br className="d-block d-lg-none" />お気軽にご相談ください。
   </p>
   <p>
-    💬 「まずは構築だけ」「オプションだけ」など、必要な部分だけの依頼も可能です
+    💬 「まずは構築だけ」<br className="d-block d-lg-none" />「オプションだけ」など、<br className="d-block d-lg-none" />必要な部分だけの依頼も可能です
   </p>
 </div>
 
-<div className="contact-button contact text-center mt-4">
-  <Button
-    variant="primary"
+<div className="contact-button text-center">
+  <Button className="contact-button"  style={{
+    backgroundColor: "#458ddb",
+    color: "white",
+    fontSize: "1.2rem",
+    padding: "1rem 2rem",
+    border: "none",
+    marginTop: "1.5rem"
+    }}
     href={`mailto:${email}?subject=お問い合わせ&body=こんにちは、`}
     size="lg"
   >
