@@ -2,24 +2,29 @@ import React from "react";
 
 interface SectionProps {
   id: string;
-  title: string;
+  title: string | JSX.Element; // JSXも文字列も受け取れるように
   children: React.ReactNode;
-   titleFontSize?: string; 
+  titleFontSize?: string; // 任意でフォントサイズを指定可能
 }
 
-const Section: React.FC<SectionProps> = ({ id, title, children }) => (
+const Section: React.FC<SectionProps> = ({
+  id,
+  title,
+  children,
+  titleFontSize = "1.5rem", // デフォルトフォントサイズ
+}) => (
   <section id={id} className="mb-5">
     <h2
       style={{
-        fontSize: "1.5rem",
+        fontSize: titleFontSize,
         fontWeight: 700,
-        marginBottom: "1.5rem", // px指定
-        textAlign: "center",    // 中央揃え
+        marginBottom: "1.5rem",
+        textAlign: "center",
       }}
     >
       {title}
     </h2>
-    <div style={{ textAlign: "center" }}>{children}</div> {/* リストなども中央揃えにしたい場合 */}
+    <div style={{ textAlign: "center" }}>{children}</div>
   </section>
 );
 
