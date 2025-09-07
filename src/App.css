@@ -49,7 +49,7 @@
   font-weight: bold;
 }
 
-.about-section-subtitle {
+.about-section-subtitle, .contact-message {
   font-size: 1rem;
   line-height: 1.7;
   margin-bottom: 0;
