@@ -25,10 +25,10 @@ const AboutSection: React.FC = () => (
       <Row className="align-items-center mt-3">
         <Col md={4} className="mb-3 mb-md-0 text-center">
           <Image
-            src="/sayaka-web.png"
+            src="/Sayaka-ad.png"
             roundedCircle
             fluid
-            alt="Sayaka-Web プロフィール写真"
+            alt="Sayaka-ad プロフィール写真"
             style={{ width: "180px", height: "180px", objectFit: "cover" }}
           />
         </Col>
@@ -57,7 +57,7 @@ const AboutSection: React.FC = () => (
               src="/Sayaka-ad.png"
               roundedCircle
               fluid
-              alt="さやかadsプロフィール写真"
+              alt="Sayaka-adプロフィール写真"
               style={{ width: "150px", height: "150px", objectFit: "cover" }}
             />
           </Col>
