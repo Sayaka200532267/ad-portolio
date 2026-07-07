@@ -8,7 +8,7 @@ const textVariants = {
   visible: { opacity: 1, y: 0, transition: { duration: 2 } },
 };
 
-const email = "sayakaohara@outlook.com"; 
+const email = "sayaka.ohara.work@gmail.com"; 
 
 const HeroSection: React.FC = () => (
   <section
@@ -21,9 +21,9 @@ const HeroSection: React.FC = () => (
       loop
       playsInline
       className="hero-video"
-      src="/hero-image.mp4"
+      src="/hero-image2.mp4"
     >
-      <source src="/hero-image.mp4" type="video/mp4" />
+      <source src="/hero-image2.mp4" type="video/mp4" />
     </video>
 
     <Container className="d-flex flex-column justify-content-center align-items-center h-100">
@@ -37,7 +37,7 @@ const HeroSection: React.FC = () => (
         <br className="d-block d-lg-none" />
         ×
         <br className="d-block d-lg-none" />
-        Web制作
+        正確な計測環境
       </motion.h1>
 
       <motion.p
@@ -47,11 +47,9 @@ const HeroSection: React.FC = () => (
         animate="visible"
         transition={{ delay: 0.3 }}
       >
-        集客からファネル設計、
+        確実な計測環境を整え、
         <br className="d-block d-lg-none" />
-        売上までワンストップで
-        <br className="d-block d-lg-none" />
-        サポートします
+        広告費を無駄にしない運用を実現します。
       </motion.p>
 
   <Button className="hero-button"  style={{

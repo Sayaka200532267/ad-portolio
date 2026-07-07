@@ -55,6 +55,10 @@
   margin-bottom: 0;
   white-space: pre-line;
 }
+.main-list li {
+  margin-bottom: 1.2rem;
+  line-height: 1.8;
+}
 
 /* =========================
    リストの先頭マークを消す

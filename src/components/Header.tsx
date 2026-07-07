@@ -6,7 +6,7 @@ const Header: React.FC = () => (
   <Navbar bg="dark" variant="dark" expand="lg" className="mb-0">
     <Container>
       <Navbar.Brand as={Link} to="/">
-        広告運用ポートフォリオ
+      さやか | 広告運用×計測　
       </Navbar.Brand>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">

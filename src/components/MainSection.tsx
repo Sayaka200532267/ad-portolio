@@ -15,41 +15,53 @@ const MainSection: React.FC = () => (
       <Section id="problems" title="こんなお悩みありませんか？" titleFontSize="1.5rem">
         <ul className="main-list">
           <li>
-            <span className="icon">🌀</span>
-            <span>Meta広告やGoogle広告、Yahoo広告を始めたけど、思うように効果が出ない</span>
+            <span className="icon">📊</span>
+            <span>広告を出しているけれど、本当に成果につながっているかわからない</span>
           </li>
           <li>
-            <span className="icon">🌀</span>
-            <span>Web広告を始めたいけど、何から始めていいかわからない</span>
+            <span className="icon">🔍</span>
+            <span>広告費をかけているのに、問い合わせや購入が増えない</span>
           </li>
           <li>
-            <span className="icon">🌀</span>
-            <span>LPやLINEなど複数ツールが連携できず、成果につながらない</span>
+            <span className="icon">📊</span>
+            <span>LPを作ったけれど、改善ポイントがわからない</span>
           </li>
           <li>
-            <span className="icon">🌀</span>
-            <span>集客の仕組み全体をどう組み立てればいいか分からない</span>
+            <span className="icon">🔍</span>
+            <span>アクセスやコンバージョンの計測が正しくできているか不安</span>
+          </li>
+          <li>
+            <span className="icon">📊</span>
+            <span>Google広告やMeta広告の数字をどう見ればいいかわからない</span>
+          </li>
+                    <li>
+            <span className="icon">🔍</span>
+            <span>タグ設定や計測環境が複雑で、自社では対応できない</span>
           </li>
         </ul>
-      </Section>
+     </Section>
 
       <Section id="improvements" title="こんな風に改善できます" titleFontSize="1.5rem">
         <ul className="main-list">
           <li>
             <FaStar style={{ color: "#f9ca24" }} className="icon" />
-            <span>LPの内容やデザインを見直し、興味を引く形に整えます</span>
+            <span>広告の成果を正しく計測し、どの施策が効果的かわかるようにします</span>
           </li>
           <li>
             <FaStar style={{ color: "#f9ca24" }} className="icon" />
-            <span>セールスコピーを改善して成約率アップを目指します</span>
+            <span>データをもとにLPの改善ポイントを見つけ、成果につながるページへ</span>
           </li>
           <li>
             <FaStar style={{ color: "#f9ca24" }}  className="icon" />
-            <span>ターゲティングとクリエイティブを最適化し、効率よく集客します</span>
+            <span>広告費の使い方を見直し、無駄な配信を減らします</span>
           </li>
           <li>
             <FaStar style={{ color: "#f9ca24" }} className="icon" />
-            <span>LINEやUTAGE、メールと連携し、集客からフォローまでスムーズにします</span>
+            <span>コンバージョンまでの流れを整理し、ユーザーに届きやすい広告運用へ</span>
+          </li>
+          <li>
+            <FaStar style={{ color: "#f9ca24" }} className="icon" />
+            <span>計測環境を整え、改善のために必要なデータを取得できる状態へ</span>
           </li>
         </ul>
       </Section>
@@ -69,23 +81,34 @@ const MainSection: React.FC = () => (
         <ul className="main-list">
           <li>
             <span className="text">
-             🌀 Meta広告やGoogle広告、<br />Yahoo広告を始めたけど、<br />思うように効果が出ない
+             📊 広告を出しているけれど、<br />本当に成果につながっているかわからない
             </span>
           </li>
           <li>
-          
-            <span className="text">
-              🌀 Web広告を始めたいけど、<br />何から始めていいかわからない
-            </span>
-          </li>
-          <li>
-             <span className="text">
-              🌀 LPやLINEなど<br />複数ツールが連携できず、<br />成果につながらない
+          <span className="text">
+             🔍 広告費をかけているのに、<br />問い合わせや購入が増えない
             </span>
           </li>
           <li>
              <span className="text">
-              🌀 集客の仕組み全体を<br />どう組み立てればいいか分からない
+             📊 LPを作ったけれど、<br />改善ポイントがわからない<br />
+            </span>
+          </li>
+           <li>
+            <span className="icon">
+              🔍アクセスやコンバージョンの計測が<br />正しくできているか不安</span>
+          </li>
+          <li>
+            <span className="icon">
+              📊 Google広告やMeta広告の数字を<br />どう見ればいいかわからない</span>
+          </li>
+          <li>
+            <span className="icon">
+              🔍 タグ設定や計測環境が複雑で、<br />自社では対応できない</span>
+          </li>
+          <li>
+             <span className="text">
+              📊 アクセスやコンバージョンの計測が<br />正しくできているか不安
             </span>
           </li>
         </ul>
@@ -97,29 +120,28 @@ const MainSection: React.FC = () => (
 <li>
   <span className="text">
     <FaStar style={{ color: "#f9ca24", marginRight: "0.2rem" }} />
-    LPの内容やデザインを見直し、<br />興味を引く形に整えます
+    広告の成果を正しく計測し、<br />どの施策が効果的かわかるようにします
   </span>
 </li>
 <li>
   <span className="text">
     <FaStar style={{ color: "#f9ca24", marginRight: "0.2rem" }} />
-    セールスコピーを改善して<br />成約率アップを目指します
+    データをもとにLPの改善ポイントを見つけ、<br />成果につながるページへ
   </span>
 </li>
 <li>
   <span className="text">
     <FaStar style={{ color: "#f9ca24", marginRight: "0.2rem" }} />
-    ターゲティングと<br />クリエイティブを最適化し、<br />効率よく集客します
+    コンバージョンまでの流れを整理し、<br />ユーザーに届きやすい広告運用へ
   </span>
 </li>
 <li>
   <span className="text">
     <FaStar style={{ color: "#f9ca24", marginRight: "0.2rem" }} />
-    LINEやUTAGE、メールと連携し、<br />集客からフォローまでスムーズにします
+    計測環境を整え、<br />改善のために必要なデータを取得できる状態へ
   </span>
 </li>
-
-        </ul>
+</ul>
       </Section>
     </div>
 
