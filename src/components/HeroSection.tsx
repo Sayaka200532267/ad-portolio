@@ -60,7 +60,7 @@ const HeroSection: React.FC = () => (
     border: "none",
     marginTop: "1.5rem"
     }}
-    href={`mailto:${email}?subject=お問い合わせ&body=こんにちは、`}
+    href={`mailto:${email}`}
     size="lg"
   >
     お問い合わせはこちら
