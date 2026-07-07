@@ -40,6 +40,7 @@
   font-weight: 600;
 }
 
+
 /* =========================
    AboutSection
    ========================= */
@@ -59,7 +60,23 @@
   margin-bottom: 1.2rem;
   line-height: 1.8;
 }
+.portfolio-link {
+  display: inline-block;
+  margin-top: 1.5rem;
+  padding: 0.7rem 1.8rem;
+  background-color: white;
+  color: #458ddb;
+  border: 2px solid #458ddb;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  transition: 0.3s;
+}
 
+.portfolio-link:hover {
+  background-color: #458ddb;
+  color: white;
+}
 /* =========================
    リストの先頭マークを消す
    ========================= */

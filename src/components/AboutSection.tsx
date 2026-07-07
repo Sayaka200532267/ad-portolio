@@ -22,7 +22,8 @@ const AboutSection: React.FC = () => (
             PC版
       ========================= */}
       <div className="pc-block">
-        <h2 className="about-section-title">
+        <h2 className="about-section-title"  style={{ lineHeight: "1.8" }}
+>
          広告運用と計測設定を通じて、<br />データを活用した改善をサポートしている<br />小原さやかと申します。
         </h2>
 
@@ -42,6 +43,16 @@ const AboutSection: React.FC = () => (
               ・「広告を出しているけれど成果がわからない」<br />
                 ・「どこを改善すればいいかわからない」<br />
                   そんなお悩みに寄り添い、目的に合わせた計測環境づくりと改善提案を行います
+            </p>
+            <p>
+<a
+  href="https://docs.google.com/presentation/d/1MF-xCNcdE12Dm_VjfC-ckGgKsLNPTaZX/edit?slide=id.p1#slide=id.p1"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="portfolio-link"
+>
+  広告運用・改善事例はこちら
+</a>
             </p>
           </Col>
         </Row>
