@@ -319,9 +319,9 @@ const SkillsAccordion: React.FC = () => {
       <div className="contact-message text-center mt-5 mb-3">
 
         <p>
-          📧 まずはメールで
+          📧 まずはLineで
           <br className="d-block d-lg-none" />
-          お気軽にご相談ください。
+          お気軽にお問い合わせください。
         </p>
 
      </div>
@@ -340,7 +340,7 @@ const SkillsAccordion: React.FC = () => {
     border: "none",
     marginTop: "1.5rem"
   }}
-  href={`mailto:${email}`}
+   href={`https://lin.ee/x8trSVq`}
   size="lg"
   onClick={() => {
     window.dataLayer = window.dataLayer || [];
@@ -349,7 +349,7 @@ const SkillsAccordion: React.FC = () => {
     });
   }}
 >
-  お問い合わせはこちら
+  お問い合わせ・Line登録はこちら
 </Button>
 
       </div>

@@ -62,8 +62,8 @@ const HeroSection: React.FC = () => (
     border: "none",
     marginTop: "1.5rem"
   }}
-  href={`mailto:${email}`}
-  size="lg"
+  href={`https://lin.ee/x8trSVq`}
+    size="lg"
   onClick={() => {
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
@@ -71,7 +71,7 @@ const HeroSection: React.FC = () => (
     });
   }}
 >
-  お問い合わせはこちら
+  お問い合わせ・Line登録はこちら
 </Button>
     </Container>
   </section>
