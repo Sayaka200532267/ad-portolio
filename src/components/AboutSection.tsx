@@ -4,6 +4,11 @@ import { FaFacebookF, FaInstagram, FaGoogle,   FaChartLine, FaChartBar, FaLaptop
 import { FiTarget } from "react-icons/fi";
 import { motion } from "framer-motion";
 import "../App.css";
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+  }
 
 const containerVariants = {
   hidden: {},

@@ -4,6 +4,7 @@ import React from "react";
 import { Container, Accordion, Button } from "react-bootstrap";
 import "../App.css";
 
+
 import {
   FaInstagram,
   FaFacebookF,
@@ -25,7 +26,12 @@ import {
 import {
   AiOutlineLineChart
 } from "react-icons/ai";
-
+declare global {
+  interface Window {
+    dataLayer: any[];
+  }
+  
+}
 
 const SkillsAccordion: React.FC = () => {
   const email = "sayakaohara@outlook.com";
