@@ -325,20 +325,26 @@ const SkillsAccordion: React.FC = () => {
       <div className="contact-button text-center">
 
         <Button
-          className="contact-button"
-          style={{
-            backgroundColor: "#458ddb",
-            color: "white",
-            fontSize: "1.2rem",
-            padding: "1rem 2rem",
-            border: "none",
-            marginTop: "1.5rem"
-          }}
-          href={`mailto:${email}?subject=お問い合わせ&body=こんにちは、`}
-          size="lg"
-        >
-          お問い合わせはこちら
-        </Button>
+  className="hero-button"
+  style={{
+    backgroundColor: "#458ddb",
+    color: "white",
+    fontSize: "1.2rem",
+    padding: "1rem 2rem",
+    border: "none",
+    marginTop: "1.5rem"
+  }}
+  href={`mailto:${email}`}
+  size="lg"
+  onClick={() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "contact_click"
+    });
+  }}
+>
+  お問い合わせはこちら
+</Button>
 
       </div>
 

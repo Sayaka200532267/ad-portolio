@@ -50,6 +50,12 @@ const AboutSection: React.FC = () => (
   target="_blank"
   rel="noopener noreferrer"
   className="portfolio-link"
+  onClick={() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "portfolio_click"
+    });
+  }}
 >
   広告運用・改善事例はこちら
 </a>
