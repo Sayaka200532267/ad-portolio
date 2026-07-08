@@ -93,7 +93,21 @@ const AboutSection: React.FC = () => (
            <p>
               「広告を出しているけれど成果がわからない」<br />
                 「どこを改善すればいいかわからない」<br /></p>
-                  そんなお悩みに寄り添い、<br />目的に合わせた計測環境づくりと<br />改善提案を行います
+                <p>
+                  そんなお悩みに寄り添い、<br />目的に合わせた計測環境づくりと<br />改善提案を行います</p>
+
+                  <a
+  href="https://docs.google.com/presentation/d/1MF-xCNcdE12Dm_VjfC-ckGgKsLNPTaZX/edit?slide=id.p1#slide=id.p1"
+  target="_blank"
+  rel="noopener noreferrer"
+  className="portfolio-link"
+  onClick={() => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "portfolio_click"
+    });
+  }}
+>広告運用・改善事例はこちら</a>
             </div>
           </Col>
         </Row>
