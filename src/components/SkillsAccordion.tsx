@@ -37,7 +37,7 @@ const SkillsAccordion: React.FC = () => {
   const email = "sayakaohara@outlook.com";
 
   return (
-    <Container className="my-5">
+    <Container id="skills" className="my-5">
 
       <h2
         className="text-center mb-4"
@@ -316,7 +316,7 @@ const SkillsAccordion: React.FC = () => {
 
 
 
-      <div className="contact-message text-center mt-5 mb-3">
+      <div id="contact" className="contact-message text-center mt-5 mb-3">
 
         <p>
           📧 まずはLineで
