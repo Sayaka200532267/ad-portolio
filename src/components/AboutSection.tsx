@@ -56,17 +56,17 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
               : "Maximize Ad Performance through Data-Driven Improvements."}
           </h3>
         </div>
-        <ul className="custom-bullet-list">
-          <li>
-            <FaCheck className="list-icon text-primary" />
+        <ul className="custom-bullet-list ps-0 mb-0" style={{ listStyle: "none" }}>
+          <li className="d-flex align-items-start mb-3" style={{ lineHeight: "1.7" }}>
+            <FaCheck className="list-icon text-primary me-2 flex-shrink-0 mt-1" />
             <span>
               {lang === "ja"
                 ? "広告・サイトの計測環境を設計・整備し、正確なデータ取得から分析、改善まで一貫して対応します。"
                 : "Design and implement tracking environments for ads and websites, handling everything from accurate data collection to analysis and optimization."}
             </span>
           </li>
-          <li>
-            <FaCheck className="list-icon text-primary" />
+          <li className="d-flex align-items-start" style={{ lineHeight: "1.7" }}>
+            <FaCheck className="list-icon text-primary me-2 flex-shrink-0 mt-1" />
             <span>
               {lang === "ja"
                 ? "GA4やGTMなどの計測基盤を活用し、ユーザー行動や広告成果を可視化。データに基づいたLP改善、サイト解析、広告施策の最適化を実現します。"
@@ -86,17 +86,17 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
               : "Cross-Border Marketing Guided by Cultural Insight into English-speaking and Japanese Markets."}
           </h3>
         </div>
-        <ul className="custom-bullet-list">
-          <li>
-            <FaCheck className="list-icon text-success" />
+        <ul className="custom-bullet-list ps-0 mb-0" style={{ listStyle: "none" }}>
+          <li className="d-flex align-items-start mb-3" style={{ lineHeight: "1.7" }}>
+            <FaCheck className="list-icon text-success me-2 flex-shrink-0 mt-1" />
             <span>
               {lang === "ja"
                 ? "海外留学・現地インターンで培った語学力と異文化理解をもとに、英語でのコミュニケーションや海外市場向けのマーケティング対応が可能です。"
                 : "Equipped with strong language skills and cross-cultural understanding from studying and interning abroad, enabling fluent English communication and global marketing execution."}
             </span>
           </li>
-          <li>
-            <FaCheck className="list-icon text-success" />
+          <li className="d-flex align-items-start" style={{ lineHeight: "1.7" }}>
+            <FaCheck className="list-icon text-success me-2 flex-shrink-0 mt-1" />
             <span>
               {lang === "ja"
                 ? "各市場の文化やユーザー心理の違いを踏まえたローカライズ、広告設定、アクセス解析・計測環境の整備を通じて、日本企業の海外展開および海外企業の日本市場進出をサポートします。"
@@ -143,16 +143,16 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
     <div className="about-full-text-mobile">
       {/* 強み1: データ改善 */}
       <div className="strength-box border-start-blue p-3 mb-3 bg-white rounded shadow-sm">
-        <div className="d-flex align-items-start mb-2">
+        <div className="d-flex align-items-start mb-3">
           <FaChartLine className="text-primary me-2 flex-shrink-0 mt-1" size={20} />
-          <h3 className="strength-heading m-0 fs-6 fw-bold">
+          <h3 className="strength-heading m-0 fs-6 fw-bold" style={{ lineHeight: "1.5" }}>
             {lang === "ja"
               ? "データに基づく確実な改善で、広告成果を最大化します。"
               : "Maximize Ad Performance through Data-Driven Improvements."}
           </h3>
         </div>
         <ul className="custom-bullet-list ps-0 mb-0" style={{ listStyle: "none" }}>
-          <li className="d-flex mb-2">
+          <li className="d-flex align-items-start mb-3" style={{ lineHeight: "1.6" }}>
             <FaCheck className="list-icon text-primary me-2 flex-shrink-0 mt-1" />
             <span className="small">
               {lang === "ja"
@@ -160,7 +160,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                 : "Design and implement tracking environments for ads and websites from data collection to optimization."}
             </span>
           </li>
-          <li className="d-flex">
+          <li className="d-flex align-items-start" style={{ lineHeight: "1.6" }}>
             <FaCheck className="list-icon text-primary me-2 flex-shrink-0 mt-1" />
             <span className="small">
               {lang === "ja"
@@ -173,16 +173,16 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
 
       {/* 強み2: クロスボーダー */}
       <div className="strength-box border-start-green p-3 mb-3 bg-white rounded shadow-sm">
-        <div className="d-flex align-items-start mb-2">
+        <div className="d-flex align-items-start mb-3">
           <FaGlobeAmericas className="text-success me-2 flex-shrink-0 mt-1" size={20} />
-          <h3 className="strength-heading m-0 fs-6 fw-bold">
+          <h3 className="strength-heading m-0 fs-6 fw-bold" style={{ lineHeight: "1.5" }}>
             {lang === "ja"
               ? "英語圏と日本市場の文化やユーザー行動を理解したクロスボーダーマーケティングを。"
               : "Cross-Border Marketing Guided by Cultural Insight into English & Japanese Markets."}
           </h3>
         </div>
         <ul className="custom-bullet-list ps-0 mb-0" style={{ listStyle: "none" }}>
-          <li className="d-flex mb-2">
+          <li className="d-flex align-items-start mb-3" style={{ lineHeight: "1.6" }}>
             <FaCheck className="list-icon text-success me-2 flex-shrink-0 mt-1" />
             <span className="small">
               {lang === "ja"
@@ -190,7 +190,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                 : "Fluent English and cross-cultural insights from studying/interning abroad enable seamless global campaign management."}
             </span>
           </li>
-          <li className="d-flex">
+          <li className="d-flex align-items-start" style={{ lineHeight: "1.6" }}>
             <FaCheck className="list-icon text-success me-2 flex-shrink-0 mt-1" />
             <span className="small">
               {lang === "ja"
@@ -203,7 +203,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
 
       {/* お悩み寄り添いブロック */}
       <div className="trouble-solution-box p-3 rounded text-center mb-3 description-text bg-light">
-        <p className="trouble-quote mb-2 small text-muted">
+        <p className="trouble-quote mb-2 small text-muted" style={{ lineHeight: "1.6" }}>
           {lang === "ja" ? (
             <>
               「広告を出しているけれど、成果がわからない」
@@ -218,7 +218,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
             </>
           )}
         </p>
-        <p className="solution-text m-0 small fw-bold">
+        <p className="solution-text m-0 small fw-bold" style={{ lineHeight: "1.6" }}>
           {lang === "ja"
             ? "そんなお悩みに寄り添い、目的に合わせた計測環境づくりと改善提案を行います。"
             : "I help resolve these challenges with custom tracking setups and data-driven recommendations."}
