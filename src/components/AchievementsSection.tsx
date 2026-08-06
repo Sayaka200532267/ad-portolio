@@ -5,7 +5,7 @@ export type Language = "ja" | "en";
 
 export interface MetricItem {
   label: { ja: string; en: string };
-  value: string;
+  value: { ja: string; en: string };
 }
 
 export interface AchievementItem {
@@ -32,8 +32,8 @@ const achievementsData: AchievementItem[] = [
     },
     period: { ja: "2025年", en: "2025" },
     metrics: [
-      { label: { ja: "広告CTR", en: "Ad CTR" }, value: "3.0% → 4.9%" },
-      { label: { ja: "改善率", en: "Growth Rate" }, value: "+63%" },
+      { label: { ja: "広告CTR", en: "Ad CTR" }, value: { ja: "3.0% → 4.9%", en: "3.0% → 4.9%" } },
+      { label: { ja: "改善率", en: "Growth Rate" }, value: { ja: "+63%", en: "+63%" } },
     ],
     description: {
       ja: (
@@ -42,7 +42,7 @@ const achievementsData: AchievementItem[] = [
           <br /><br />
           事業主様と直接連携し、ビジネス課題やマーケティング上のボトルネックを整理。ユーザーがなぜ反応するのか、どのような導線でコンバージョンに至るのかを分析し、クリエイティブ・訴求メッセージ・LP改善まで一貫して取り組みました。
           <br /><br />
-          定例ミーティングを通じて仮説立案・検証・改善を継続し、感覚に頼らずデータをもとに意思決定できるマーケティング改善サイクルを実行しました。
+          定例ミーティングを通じて仮説立案・検証・改善を継続し、感覚に頼らずデータをもとに意思決定できるマーケティング改善サイクルを構築。
         </>
       ),
       en: (
@@ -86,8 +86,8 @@ const achievementsData: AchievementItem[] = [
     },
     period: { ja: "2026年 〜 現在", en: "2026 – Present" },
     metrics: [
-      { label: { ja: "計測精度", en: "Tracking Accuracy" }, value: "100%" },
-      { label: { ja: "構築フェーズ", en: "Project Phase" }, value: "配信前" },
+      { label: { ja: "計測精度", en: "Tracking Accuracy" }, value: { ja: "100%", en: "100%" } },
+      { label: { ja: "構築フェーズ", en: "Project Phase" }, value: { ja: "配信前", en: "Pre-launch" } },
     ],
     description: {
       ja: (
@@ -96,7 +96,7 @@ const achievementsData: AchievementItem[] = [
           <br /><br />
           採用目標や事業課題から逆算し、必要なデータや指標を整理。GTM・GA4を活用した計測設計からLooker Studioによる可視化まで一貫して構築し、ユーザー行動を分析できるマーケティング基盤を整備しました。
           <br /><br />
-          取得したデータを単なるレポートとして終わらせるのではなく、応募導線の改善や施策判断につながるインサイトへ変換し、継続的な改善につながる分析環境の構築をしました。
+          取得したデータを単なるレポートとして終わらせるのではなく、応募導線の改善や施策判断につながるインサイトへ変換し、継続的な改善につながる分析環境を構築。
         </>
       ),
       en: (
@@ -138,7 +138,9 @@ const achievementsData: AchievementItem[] = [
       ja: "Web代理店支援：複雑な広告計測環境の再設計＆データ品質最適化",
       en: "Agency Technical Partner: Complex Measurement Infrastructure & Data Quality Optimization",
     },
-    metrics: [{ label: { ja: "正確性", en: "Accuracy" }, value: "100%" }],
+    metrics: [
+      { label: { ja: "正確性", en: "Accuracy" }, value: { ja: "100%", en: "100%" } }
+    ],
     description: {
       ja: (
         <>
@@ -146,7 +148,7 @@ const achievementsData: AchievementItem[] = [
           <br /><br />
           広告代理店様のテクニカルパートナーとして、複雑化したGTM・GA4環境を精査し、既存の計測設計に潜む課題やデータ品質の問題を整理。タグ設計からトラッキング実装、計測環境の改善まで幅広く対応しました。
           <br /><br />
-          広告媒体の最適化に必要なデータを正確に取得できる環境を整備し、マーケターが本来注力すべき戦略立案や改善活動に集中できるマーケティング基盤の作成を行いました。
+          広告媒体の最適化に必要なデータを正確に取得できる環境を整備し、マーケターが本来注力すべき戦略立案や改善活動に集中できるマーケティング基盤を構築。
         </>
       ),
       en: (
@@ -207,7 +209,15 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
           </span>
         </>
       ),
-      en: "Demonstrated success spanning direct client consulting, performance marketing strategy, and advanced tracking architecture.",
+      en: (
+        <>
+          Demonstrated success spanning direct client consulting,
+          <br />
+          performance marketing strategy,
+          <br />
+          and advanced tracking architecture.
+        </>
+      ),
     },
     trustBadges: {
       rating: { ja: "クラウドソーシング評価", en: "Client Rating" },
@@ -276,7 +286,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
                     {item.period && <span className="card-period">{item.period[lang]}</span>}
                   </div>
 
-                  {/* タイトル（行間・余白を十分確保） */}
+                  {/* タイトル */}
                   <h3
                     className="card-title"
                     style={{
@@ -300,7 +310,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
                       {item.metrics.map((m, idx) => (
                         <div key={idx} className="metric-item">
                           <span className="metric-label">{m.label[lang]}</span>
-                          <span className="metric-value">{m.value}</span>
+                          <span className="metric-value">{m.value[lang]}</span>
                         </div>
                       ))}
                     </div>
