@@ -1,16 +1,8 @@
+// src/components/AboutSection.tsx
+
 import React, { useState } from "react";
-import { Row, Col, Image, Container } from "react-bootstrap";
-import {
-  FaFacebookF,
-  FaInstagram,
-  FaGoogle,
-  FaChartLine,
-  FaChartBar,
-  FaLaptop,
-} from "react-icons/fa";
-import { FiTarget } from "react-icons/fi";
-import { motion } from "framer-motion";
-import "../App.css";
+import { Row, Col, Image, Container, Modal } from "react-bootstrap";
+import { FaChartLine, FaGlobeAmericas, FaCheck, FaArrowRight } from "react-icons/fa";
 
 declare global {
   interface Window {
@@ -18,344 +10,297 @@ declare global {
   }
 }
 
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.2 } },
-};
-
-const iconVariants = {
-  hidden: { opacity: 0, y: 20 },
-  visible: { opacity: 1, y: 0, transition: { duration: 1.5 } },
-};
-
 const AboutSection: React.FC = () => {
-  // stateをコンポーネント内部に移動し、拡大表示する画像パスも管理できるように変更
+  // 拡大表示する画像パスの管理
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
 
+  // ポートフォリオクリック時のGTMイベント送信
+  const handlePortfolioClick = () => {
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({
+      event: "portfolio_click",
+    });
+  };
+
+  // お名前・キャッチコピーコンポーネント（写真の上に配置）
+  const NameTitle = () => (
+    <div className="title-area mb-3 text-center">
+      <h2 className="about-main-title" style={{ fontSize: "1.3rem", lineHeight: "1.6" }}>
+        広告運用と計測環境で、
+        <br />
+        データに基づいた<br />マーケティング改善を実現する
+        <br />
+小原さやかです。
+      </h2>
+    </div>
+  );
+
+  // 文章コンポーネント：PC用（レイアウト重視の表示）
+  const AboutContentPC = () => (
+    <div className="about-full-text">
+      {/* 強み1: データ改善 */}
+      <div className="strength-box border-start-blue p-4 mb-4 bg-white rounded shadow-sm">
+        <div className="d-flex align-items-center mb-3">
+          <FaChartLine className="text-primary me-2 flex-shrink-0" size={24} />
+          <h3 className="strength-heading m-0">
+            データに基づく確実な改善で、広告成果を最大化します。
+          </h3>
+        </div>
+        <ul className="custom-bullet-list">
+          <li>
+            <FaCheck className="list-icon text-primary" />
+            <span>
+              広告・サイトの計測環境を設計・整備し、正確なデータ取得から分析、改善まで一貫して対応します。
+            </span>
+          </li>
+          <li>
+            <FaCheck className="list-icon text-primary" />
+            <span>
+              GA4やGTMなどの計測基盤を活用し、ユーザー行動や広告成果を可視化。データに基づいたLP改善、サイト解析、広告施策の最適化を実現します。
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* 強み2: クロスボーダー */}
+      <div className="strength-box border-start-green p-4 mb-4 bg-white rounded shadow-sm">
+        <div className="d-flex align-items-center mb-3">
+          <FaGlobeAmericas className="text-success me-2 flex-shrink-0" size={24} />
+          <h3 className="strength-heading m-0">
+            英語圏と日本市場、それぞれの文化やユーザー行動を理解した
+            クロスボーダーマーケティングを。
+          </h3>
+        </div>
+        <ul className="custom-bullet-list">
+          <li>
+            <FaCheck className="list-icon text-success" />
+            <span>
+              海外留学・現地インターンで培った語学力と異文化理解をもとに、英語でのコミュニケーションや海外市場向けのマーケティング対応が可能です。
+            </span>
+          </li>
+          <li>
+            <FaCheck className="list-icon text-success" />
+            <span>
+              各市場の文化やユーザー心理の違いを踏まえたローカライズ、広告設定、アクセス解析・計測環境の整備を通じて、日本企業の海外展開および海外企業の日本市場進出をサポートします。
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* お悩み寄り添いブロック */}
+      <div className="trouble-solution-box p-4 rounded text-center mb-4 description-text">
+        <p className="trouble-quote mb-2 description-text">
+          「広告を出しているけれど、成果がわからない」
+          <br />
+          「どこをどう改善すればいいかわからない」
+        </p>
+        <p className="solution-text m-0 description-text">
+          そんなお悩みに寄り添い、目的に合わせた計測環境づくりと改善提案を行います。
+        </p>
+      </div>
+    </div>
+  );
+
+  // 文章コンポーネント：スマホ用（狭い画面でも改行・パディングが崩れない最適化表示）
+  const AboutContentMobile = () => (
+    <div className="about-full-text-mobile">
+      {/* 強み1: データ改善 */}
+      <div className="strength-box border-start-blue p-3 mb-3 bg-white rounded shadow-sm">
+        <div className="d-flex align-items-start mb-2">
+          <FaChartLine className="text-primary me-2 flex-shrink-0 mt-1" size={20} />
+          <h3 className="strength-heading m-0 fs-6 fw-bold">
+            データに基づく確実な改善で、広告成果を最大化します。
+          </h3>
+        </div>
+        <ul className="custom-bullet-list ps-0 mb-0" style={{ listStyle: "none" }}>
+          <li className="d-flex mb-2">
+            <FaCheck className="list-icon text-primary me-2 flex-shrink-0 mt-1" />
+            <span className="small">
+              広告・サイトの計測環境を設計・整備し、正確なデータ取得から分析、改善まで一貫して対応します。
+            </span>
+          </li>
+          <li className="d-flex">
+            <FaCheck className="list-icon text-primary me-2 flex-shrink-0 mt-1" />
+            <span className="small">
+              GA4やGTMなどの計測基盤を活用し、ユーザー行動や広告成果を可視化。データに基づいたLP改善、サイト解析、広告施策の最適化を実現します。
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* 強み2: クロスボーダー */}
+      <div className="strength-box border-start-green p-3 mb-3 bg-white rounded shadow-sm">
+        <div className="d-flex align-items-start mb-2">
+          <FaGlobeAmericas className="text-success me-2 flex-shrink-0 mt-1" size={20} />
+          <h3 className="strength-heading m-0 fs-6 fw-bold">
+            英語圏と日本市場の文化やユーザー行動を理解したクロスボーダーマーケティングを。
+          </h3>
+        </div>
+        <ul className="custom-bullet-list ps-0 mb-0" style={{ listStyle: "none" }}>
+          <li className="d-flex mb-2">
+            <FaCheck className="list-icon text-success me-2 flex-shrink-0 mt-1" />
+            <span className="small">
+              海外留学・現地インターンで培った語学力と異文化理解をもとに、英語でのコミュニケーションや海外市場向けのマーケティング対応が可能です。
+            </span>
+          </li>
+          <li className="d-flex">
+            <FaCheck className="list-icon text-success me-2 flex-shrink-0 mt-1" />
+            <span className="small">
+              各市場の文化やユーザー心理の違いを踏まえたローカライズ、広告設定、アクセス解析・計測環境の整備を通じて、日本企業の海外展開および海外企業の日本市場進出をサポートします。
+            </span>
+          </li>
+        </ul>
+      </div>
+
+      {/* お悩み寄り添いブロック */}
+      <div className="trouble-solution-box p-3 rounded text-center mb-3 description-text bg-light">
+        <p className="trouble-quote mb-2 small text-muted">
+          「広告を出しているけれど、成果がわからない」
+          <br />
+          「どこをどう改善すればいいかわからない」
+        </p>
+        <p className="solution-text m-0 small fw-bold">
+          そんなお悩みに寄り添い、目的に合わせた計測環境づくりと改善提案を行います。
+        </p>
+      </div>
+    </div>
+  );
+
+  // ボタンコンポーネント
+  const OriginalLinkBtn = () => (
+    <a
+      href="https://docs.google.com/presentation/d/1MF-xCNcdE12Dm_VjfC-ckGgKsLNPTaZX/edit?slide=id.p1#slide=id.p1"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="portfolio-link shadow-sm"
+      onClick={handlePortfolioClick}
+    >
+      広告運用・改善事例はこちら
+      <FaArrowRight style={{ marginLeft: "0.5rem", fontSize: "0.9rem" }} />
+    </a>
+  );
+
   return (
-    <Container style={{ maxWidth: 900 }} className="about-section-container">
+    <Container className="about-section-container py-4">
       <section id="about" className="mb-5">
         {/* =========================
-              PC版
+              PC版（md以上）
         ========================= */}
-        <div className="pc-block">
-          <h2 className="about-section-title" style={{ lineHeight: "1.8" }}>
-            広告運用と計測設定を通じて、
-            <br />
-            データを活用した改善をサポートしている
-            <br />
-            小原さやかと申します。
-          </h2>
-
-          <Row className="align-items-center mt-3">
-            <Col md={4} className="mb-3 mb-md-0 text-center">
-              <Image
-                src="/Sayaka-ad.png"
-                roundedCircle
-                fluid
-                alt="Sayaka-ad プロフィール写真"
-                style={{ width: "180px", height: "180px", objectFit: "cover" }}
-              />
+        <div className="pc-block d-none d-md-block">
+          <Row className="gx-5 align-items-start profile-row">
+            {/* 左側: 名前 ＋ プロフィール画像 ＋ ボタン */}
+            <Col md={4} className="text-center profile-image-col sticky-md-top" style={{ top: "100px", zIndex: 1 }}>
+              <NameTitle />
+              <div className="profile-image-container mb-4">
+                <Image
+                  src="/Sayaka-ad.png"
+                  roundedCircle
+                  fluid
+                  alt="小原さやか プロフィール写真"
+                  className="profile-image shadow"
+                  style={{ width: "220px", height: "220px", objectFit: "cover" }}
+                />
+              </div>
+              <div className="portfolio-link-wrapper-pc mt-4">
+                <OriginalLinkBtn />
+              </div>
             </Col>
-            <Col md={8}>
-              <p className="about-section-subtitle">
-                広告が正しく計測できているか確認し、数字をもとにLP改善や広告パフォーマンスの向上につなげるお手伝いをしています。
-                <br />
-                ・「広告を出しているけれど成果がわからない」
-                <br />
-                ・「どこを改善すればいいかわからない」
-                <br />
-                そんなお悩みに寄り添い、目的に合わせた計測環境づくりと改善提案を行います
-              </p>
 
-              <p>
-                <a
-                  href="https://docs.google.com/presentation/d/1MF-xCNcdE12Dm_VjfC-ckGgKsLNPTaZX/edit?slide=id.p1#slide=id.p1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="portfolio-link"
-                  onClick={() => {
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({
-                      event: "portfolio_click",
-                    });
-                  }}
-                >
-                  広告運用・改善事例はこちら
-                </a>
-              </p>
+            {/* 右側: PC専用テキスト */}
+            <Col md={8} className="profile-text-col">
+              <AboutContentPC />
             </Col>
           </Row>
 
-          <div className="text-center mt-5 mb-5">
-            <h3 className="about-section-title mb-3">
-              Looker Studioによるレポート作成例
-            </h3>
-
-            <Image
-              src="/looker-sample.png"
-              fluid
-              rounded
-              alt="Looker Studioレポートサンプル"
-              style={{
-                cursor: "pointer",
-                maxWidth: "300px",
-                marginBottom: "1rem",
-                marginRight: "30px"
-              }}
-              onClick={() => setSelectedImage("/looker-sample.png")}
-            />
-
-            <Image
-              src="/GA4-sample.png"
-              fluid
-              rounded
-              alt="GA4レポートサンプル"
-              style={{
-                cursor: "pointer",
-                maxWidth: "300px",
-              }}
-              onClick={() => setSelectedImage("/GA4-sample.png")}
-            />
-            <p className="mt-2 text-muted">※画像をクリックすると拡大できます</p>
+          {/* Looker Studio / GA4 レポート実績 */}
+          <div className="mt-5 p-4 bg-light rounded text-center shadow-sm report-section">
+            <h3 className="h5 fw-bold mb-4 text-dark">Looker Studio / GA4 によるレポート作成例</h3>
+            <Row className="justify-content-center gx-3">
+              <Col md={5} className="mb-3 mb-md-0">
+                <Image
+                  src="/looker-sample.png"
+                  fluid
+                  rounded
+                  alt="Looker Studioレポート"
+                  className="report-thumb shadow-sm"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setSelectedImage("/looker-sample.png")}
+                />
+              </Col>
+              <Col md={5}>
+                <Image
+                  src="/GA4-sample.png"
+                  fluid
+                  rounded
+                  alt="GA4レポート"
+                  className="report-thumb shadow-sm"
+                  style={{ cursor: "pointer" }}
+                  onClick={() => setSelectedImage("/GA4-sample.png")}
+                />
+              </Col>
+            </Row>
+            <p className="mt-3 text-muted small m-0">※画像をクリックすると拡大できます</p>
           </div>
-
-          {/* 画像拡大表示用モーダル */}
-          {selectedImage && (
-            <div
-              onClick={() => setSelectedImage(null)}
-              style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                background: "rgba(0,0,0,0.7)",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                zIndex: 9999,
-                cursor: "pointer",
-              }}
-            >
-              <img
-                src={selectedImage}
-                alt="拡大表示"
-                style={{
-                  maxWidth: "90%",
-                  maxHeight: "90%",
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-          )}
         </div>
 
         {/* =========================
-              スマホ版
+              スマホ版（md未満）
         ========================= */}
-        <div className="mobile-block">
-          <h2 className="about-section-title text-center">
-            広告運用と計測設定を通じて、
-            <br />
-            データを活用した改善を
-            <br />
-            サポートしている
-            <br />
-            小原さやかと申します。
-          </h2>
+        <div className="mobile-block d-md-none">
+          <NameTitle />
+          <div className="text-center mb-4">
+            <Image
+              src="/Sayaka-ad.png"
+              roundedCircle
+              fluid
+              alt="小原さやか プロフィール写真"
+              className="profile-image-mobile shadow"
+              style={{ width: "160px", height: "160px", objectFit: "cover" }}
+            />
+          </div>
+          
+          {/* スマホ専用テキストを配置 */}
+          <AboutContentMobile />
 
-          <Row className="align-items-center mt-3">
-            <Col xs={12} className="text-center mb-3">
-              <Image
-                src="/Sayaka-ad.png"
-                roundedCircle
-                fluid
-                alt="Sayaka-adプロフィール写真"
-                style={{ width: "150px", height: "150px", objectFit: "cover" }}
-              />
-            </Col>
-            <Col xs={12}>
-              <div className="about-section-subtitle mb-3">
-                <p>
-                  広告が正しく計測できているか確認し、
-                  <br />
-                  数字をもとにLP改善や広告パフォーマンスの
-                  <br />
-                  向上につなげるお手伝いをしています。
-                </p>
-                <p>
-                  「広告を出しているけれど成果がわからない」
-                  <br />
-                  「どこを改善すればいいかわからない」
-                  <br />
-                </p>
-                <p>
-                  そんなお悩みに寄り添い、
-                  <br />
-                  目的に合わせた計測環境づくりと<br />
-                  改善提案を行います
-                </p>
+          <div className="text-center my-4">
+            <OriginalLinkBtn />
+          </div>
 
-                <a
-                  href="https://docs.google.com/presentation/d/1MF-xCNcdE12Dm_VjfC-ckGgKsLNPTaZX/edit?slide=id.p1#slide=id.p1"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="portfolio-link"
-                  onClick={() => {
-                    window.dataLayer = window.dataLayer || [];
-                    window.dataLayer.push({
-                      event: "portfolio_click",
-                    });
-                  }}
-                >
-                  広告運用・改善事例はこちら
-                </a>
-              </div>
-            </Col>
-          </Row>
-          <div className="text-center mt-5 mb-5">
-            <h3 className="about-section-title mb-3">
-              Looker Studioによる<br />レポート作成例
+          <div className="mt-4 p-3 bg-light rounded text-center shadow-sm">
+            <h3 className="h6 fw-bold mb-3 text-dark">
+              Looker Studio / GA4<br />レポート作成例
             </h3>
-
             <Image
               src="/looker-sample.png"
               fluid
               rounded
-              alt="Looker Studioレポートサンプル"
-              style={{
-                cursor: "pointer",
-                maxWidth: "300px",
-                marginRight: "30px",
-                marginLeft: "30px"
-              }}
+              alt="Looker Studioレポート"
+              className="mb-3 report-thumb-mobile shadow-sm"
+              style={{ cursor: "pointer", maxWidth: "280px" }}
               onClick={() => setSelectedImage("/looker-sample.png")}
             />
-
+            <br />
             <Image
               src="/GA4-sample.png"
               fluid
               rounded
-              alt="GA4レポートサンプル"
-              style={{
-                cursor: "pointer",
-                maxWidth: "300px",
-                
-              }}
+              alt="GA4レポート"
+              className="report-thumb-mobile shadow-sm"
+              style={{ cursor: "pointer", maxWidth: "280px" }}
               onClick={() => setSelectedImage("/GA4-sample.png")}
             />
-            <p className="mt-2 text-muted">※画像をクリックすると拡大できます</p>
+            <p className="mt-2 text-muted small m-0">※画像をクリックすると拡大できます</p>
           </div>
-
-          {/* 画像拡大表示用モーダル */}
-          {selectedImage && (
-            <div
-              onClick={() => setSelectedImage(null)}
-              style={{
-                position: "fixed",
-                top: 0,
-                left: 0,
-                width: "100%",
-                height: "100%",
-                background: "rgba(0,0,0,0.7)",
-                display: "flex",
-                justifyContent: "center",
-                alignItems: "center",
-                zIndex: 9999,
-                cursor: "pointer",
-              }}
-            >
-              <img
-                src={selectedImage}
-                alt="拡大表示"
-                style={{
-                  maxWidth: "90%",
-                  maxHeight: "90%",
-                  objectFit: "contain",
-                }}
-              />
-            </div>
-          )}
         </div>
 
-        <h3
-          className="about-section-title text-center"
-          style={{ margin: "2rem 0" }}
-        >
-          対応可能な内容
-        </h3>
-
-        <motion.div
-          className="row justify-content-center text-center"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <Col xs={6} md={6} className="mb-4 about-icon-col">
-            <motion.div variants={iconVariants}>
-              <FaFacebookF size={80} color="#3b5998" />
-              <FaInstagram
-                size={80}
-                color="#E1306C"
-                style={{ marginLeft: "0.5rem" }}
-              />
-            </motion.div>
-            <p>Google広告・Meta広告の運用サポート</p>
-          </Col>
-
-          <Col xs={6} md={6} className="mb-4 about-icon-col">
-            <motion.div variants={iconVariants}>
-              <FaGoogle size={80} color="#4285F4" />
-            </motion.div>
-            <p>広告アカウント設定・配信状況の確認</p>
-          </Col>
-
-          <Col xs={6} md={6} className="mb-4 about-icon-col">
-            <motion.div variants={iconVariants}>
-              <FiTarget size={80} color="#FF3300" />
-            </motion.div>
-            <p>
-              GTMを使用した
-              <br />
-              タグ設定
-            </p>
-          </Col>
-
-          <Col xs={6} md={6} className="mb-4 about-icon-col">
-            <motion.div variants={iconVariants}>
-              <FaChartLine size={80} color="#34A853" />
-            </motion.div>
-            <p>
-              GA4などの
-              <br />
-              計測環境設定
-            </p>
-          </Col>
-
-          <Col xs={6} md={6} className="mb-4 about-icon-col">
-            <motion.div variants={iconVariants}>
-              <FaChartBar size={80} color="#FBBC05" />
-            </motion.div>
-            <p>
-              広告データ分析・
-              <br />
-              レポート作成 (Big Query/Looker Studio)
-            </p>
-          </Col>
-
-          <Col xs={6} md={6} className="mb-4 about-icon-col">
-            <motion.div variants={iconVariants}>
-              <FaLaptop size={80} color="#61DAFB" />
-            </motion.div>
-            <p>
-              LP改善・
-              <br />
-              広告クリエイティブ改善
-            </p>
-          </Col>
-        </motion.div>
+        {/* 画像拡大表示モーダル */}
+        <Modal show={!!selectedImage} onHide={() => setSelectedImage(null)} centered size="lg">
+          <Modal.Body className="p-1 text-center bg-dark rounded">
+            {selectedImage && (
+              <Image src={selectedImage} fluid alt="拡大レポート" style={{ maxHeight: "85vh" }} />
+            )}
+          </Modal.Body>
+        </Modal>
       </section>
     </Container>
   );

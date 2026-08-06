@@ -12,7 +12,7 @@ const MainSection: React.FC = () => (
           PC版（横並び）
     ====================== */}
     <div className="pc-block">
-      <Section id="problems" title="こんなお悩みありませんか？" titleFontSize="1.5rem">
+      <Section id="problems" title="こんなお悩みありませんか？" titleFontSize="1.7em">
         <ul className="main-list">
           <li>
             <span className="icon">📊</span>
@@ -41,7 +41,7 @@ const MainSection: React.FC = () => (
         </ul>
      </Section>
 
-      <Section id="improvements" title="こんな風に改善できます" titleFontSize="1.5rem">
+      <Section id="improvements" title="こんな風に改善できます" titleFontSize="1.7rem">
         <ul className="main-list">
           <li>
             <FaStar style={{ color: "#f9ca24" }} className="icon" />

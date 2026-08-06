@@ -4,14 +4,14 @@ interface SectionProps {
   id: string;
   title: string | JSX.Element; // JSXも文字列も受け取れるように
   children: React.ReactNode;
-  titleFontSize?: string; // 任意でフォントサイズを指定可能
+  titleFontSize?: string; 
 }
 
 const Section: React.FC<SectionProps> = ({
   id,
   title,
   children,
-  titleFontSize = "1.5rem", // デフォルトフォントサイズ
+  titleFontSize = "1.7rem", 
 }) => (
   <section id={id} className="mb-5">
     <h2
