@@ -1,7 +1,5 @@
-// src/components/SkillsAccordion.tsx
-
 import React, { useState } from "react";
-import { Container, Accordion, Button, Form } from "react-bootstrap";
+import { Container, Accordion, Button, Form, Card, Row, Col } from "react-bootstrap";
 import "../App.css";
 
 import {
@@ -12,6 +10,7 @@ import {
   FaTags,
   FaDatabase,
   FaGlobeAmericas,
+  FaPaperPlane,
 } from "react-icons/fa";
 
 import {
@@ -39,7 +38,6 @@ interface SkillsAccordionProps {
   lang: Language;
 }
 
-// 多言語テキスト定義
 const translations = {
   ja: {
     title: "使用ツール・技術・言語",
@@ -60,6 +58,7 @@ const translations = {
     },
     contact: {
       title: "お問い合わせ",
+      subtitle: "ご質問や案件のご相談など、お気軽にご連絡ください。",
       nameLabel: "お名前",
       namePlaceholder: "山田 太郎",
       emailLabel: "メールアドレス",
@@ -89,6 +88,7 @@ const translations = {
     },
     contact: {
       title: "Contact Me",
+      subtitle: "Feel free to reach out for any inquiries or project proposals.",
       nameLabel: "Name",
       namePlaceholder: "Your Name",
       emailLabel: "Email Address",
@@ -104,7 +104,6 @@ const translations = {
 const SkillsAccordion: React.FC<SkillsAccordionProps> = ({ lang }) => {
   const t = translations[lang];
 
-  // フォーム用ステート管理
   const [formData, setFormData] = useState({ name: "", email: "", message: "" });
   const [submitted, setSubmitted] = useState(false);
 
@@ -118,7 +117,6 @@ const SkillsAccordion: React.FC<SkillsAccordionProps> = ({ lang }) => {
   const handleFormSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // DataLayer イベントの発行
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({
       event: "contact_form_submit",
@@ -126,25 +124,19 @@ const SkillsAccordion: React.FC<SkillsAccordionProps> = ({ lang }) => {
       formData: formData,
     });
 
-    // ここでバックエンド API への送信処理や Formspree / EmailJS などの連携を行ってください
-
     setSubmitted(true);
   };
 
-  // アコーディオンのコンテンツ定義
   const accordionItems = [
     {
       key: "0",
       title: t.categories.ads,
       content: (
-        <ul>
+        <ul className="list-unstyled mb-0 d-flex flex-column gap-2 align-items-center">
+          <li><FaGoogle className="me-2 text-primary" />{t.items.googleAds}</li>
           <li>
-            <FaGoogle className="me-2" />
-            {t.items.googleAds}
-          </li>
-          <li>
-            <FaFacebookF className="ms-2 me-1" />
-            <FaInstagram className="me-2" />
+            <FaFacebookF className="me-1 text-primary" />
+            <FaInstagram className="me-2 text-danger" />
             {t.items.metaAds}
           </li>
         </ul>
@@ -154,23 +146,11 @@ const SkillsAccordion: React.FC<SkillsAccordionProps> = ({ lang }) => {
       key: "1",
       title: t.categories.analytics,
       content: (
-        <ul>
-          <li>
-            <FaTags className="me-2" />
-            {t.items.gtm}
-          </li>
-          <li>
-            <AiOutlineLineChart className="me-2" />
-            {t.items.ga4}
-          </li>
-          <li>
-            <AiOutlineLineChart className="me-2" />
-            BigQuery
-          </li>
-          <li>
-            <AiOutlineLineChart className="me-2" />
-            Looker Studio
-          </li>
+        <ul className="list-unstyled mb-0 d-flex flex-column gap-2 align-items-center">
+          <li><FaTags className="me-2 text-info" />{t.items.gtm}</li>
+          <li><AiOutlineLineChart className="me-2 text-warning" />{t.items.ga4}</li>
+          <li><AiOutlineLineChart className="me-2 text-warning" />BigQuery</li>
+          <li><AiOutlineLineChart className="me-2 text-warning" />Looker Studio</li>
         </ul>
       ),
     },
@@ -178,16 +158,10 @@ const SkillsAccordion: React.FC<SkillsAccordionProps> = ({ lang }) => {
       key: "2",
       title: t.categories.webCms,
       content: (
-        <ul>
-          <li>
-            <SiHtml5 className="me-1" /> HTML / <SiCss3 className="ms-2 me-1" /> CSS
-          </li>
-          <li>
-            <SiJavascript className="ms-2 me-1" /> JavaScript / <FaReact className="ms-2 me-1" /> React
-          </li>
-          <li>
-            <SiShopify className="ms-2 me-1" /> Shopify / <SiWordpress className="ms-2 me-1" /> WordPress
-          </li>
+        <ul className="list-unstyled mb-0 d-flex flex-column gap-2 align-items-center">
+          <li><SiHtml5 className="me-2 text-danger" />HTML5 / <SiCss3 className="mx-2 text-primary" />CSS3</li>
+          <li><SiJavascript className="me-2 text-warning" />JavaScript / <FaReact className="mx-2 text-info" />React</li>
+          <li><SiShopify className="me-2 text-success" />Shopify / <SiWordpress className="mx-2 text-primary" />WordPress</li>
         </ul>
       ),
     },
@@ -195,16 +169,10 @@ const SkillsAccordion: React.FC<SkillsAccordionProps> = ({ lang }) => {
       key: "3",
       title: t.categories.design,
       content: (
-        <ul>
-          <li>
-            <SiCanva className="me-2" /> Canva
-          </li>
-          <li>
-            <SiFigma className="ms-2 me-2" /> Figma
-          </li>
-          <li>
-            <SiAdobeillustrator className="ms-2 me-2" /> Illustrator
-          </li>
+        <ul className="list-unstyled mb-0 d-flex flex-column gap-2 align-items-center">
+          <li><SiCanva className="me-2 text-info" />Canva</li>
+          <li><SiFigma className="me-2 text-danger" />Figma</li>
+          <li><SiAdobeillustrator className="me-2 text-warning" />Illustrator</li>
         </ul>
       ),
     },
@@ -212,10 +180,8 @@ const SkillsAccordion: React.FC<SkillsAccordionProps> = ({ lang }) => {
       key: "4",
       title: t.categories.db,
       content: (
-        <ul>
-          <li>
-            <FaDatabase className="mx-2" /> SQL (BigQuery)
-          </li>
+        <ul className="list-unstyled mb-0 d-flex flex-column gap-2 align-items-center">
+          <li><FaDatabase className="me-2 text-secondary" />SQL (BigQuery)</li>
         </ul>
       ),
     },
@@ -223,105 +189,114 @@ const SkillsAccordion: React.FC<SkillsAccordionProps> = ({ lang }) => {
       key: "5",
       title: t.categories.languages,
       content: (
-        <ul>
-          <li>
-            <FaGlobeAmericas className="mx-2" />
-            {t.items.english}
-          </li>
+        <ul className="list-unstyled mb-0 d-flex flex-column gap-2 align-items-center">
+          <li><FaGlobeAmericas className="me-2 text-success" />{t.items.english}</li>
         </ul>
       ),
     },
   ];
 
   return (
-    <Container id="skills" className="my-5">
-      <h2
-        className="text-center mb-4"
-        style={{ fontSize: "1.7rem", fontWeight: 700 }}
-      >
-        {t.title}
-      </h2>
+    <Container id="skills" className="py-5">
+      {/* --- スキルセクション --- */}
+      <div className="mb-5">
+        <h2 className="text-center mb-4 fw-bold" style={{ fontSize: "1.8rem" }}>
+          {t.title}
+        </h2>
+        <Accordion alwaysOpen className="custom-accordion mx-auto" style={{ maxWidth: "800px" }}>
+          {accordionItems.map((item) => (
+            <Accordion.Item key={item.key} eventKey={item.key} className="border-0 mb-2 rounded shadow-sm overflow-hidden">
+              <Accordion.Header className="custom-accordion-header">
+                {item.title}
+              </Accordion.Header>
+              <Accordion.Body className="text-center py-4 bg-light">
+                {item.content}
+              </Accordion.Body>
+            </Accordion.Item>
+          ))}
+        </Accordion>
+      </div>
 
-      <Accordion alwaysOpen className="custom-accordion">
-        {accordionItems.map((item) => (
-          <Accordion.Item key={item.key} eventKey={item.key}>
-            <Accordion.Header className="custom-accordion-header">
-              {item.title}
-            </Accordion.Header>
-            <Accordion.Body className="text-center">
-              {item.content}
-            </Accordion.Body>
-          </Accordion.Item>
-        ))}
-      </Accordion>
+      <hr className="my-5 opacity-25" />
 
-      <div id="contact" className="mt-5">
-        <div className="contact-form-container mx-auto" style={{ maxWidth: "600px" }}>
-          <h3 className="text-center mb-4" style={{ fontWeight: 600 }}>
-            {t.contact.title}
-          </h3>
-          {submitted ? (
-            <div className="alert alert-success text-center" role="alert">
-              {t.contact.successMsg}
+      {/* --- 問い合わせセクション --- */}
+      <div id="contact" className="pt-3">
+        <Card className="border-0 shadow-lg mx-auto rounded-4 overflow-hidden" style={{ maxWidth: "680px" }}>
+          <Card.Body className="p-4 p-md-5">
+            <div className="text-center mb-4">
+              <h3 className="fw-bold mb-2" style={{ fontSize: "1.6rem" }}>
+                {t.contact.title}
+              </h3>
+              <p className="text-muted small">{t.contact.subtitle}</p>
             </div>
-          ) : (
-            <Form onSubmit={handleFormSubmit}>
-              <Form.Group className="mb-3" controlId="formName">
-                <Form.Label>{t.contact.nameLabel}</Form.Label>
-                <Form.Control
-                  type="text"
-                  name="name"
-                  required
-                  placeholder={t.contact.namePlaceholder}
-                  value={formData.name}
-                  onChange={handleFormChange}
-                />
-              </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formEmail">
-                <Form.Label>{t.contact.emailLabel}</Form.Label>
-                <Form.Control
-                  type="email"
-                  name="email"
-                  required
-                  placeholder={t.contact.emailPlaceholder}
-                  value={formData.email}
-                  onChange={handleFormChange}
-                />
-              </Form.Group>
+            {submitted ? (
+              <div className="alert alert-success text-center p-4 rounded-3" role="alert">
+                {t.contact.successMsg}
+              </div>
+            ) : (
+              <Form onSubmit={handleFormSubmit}>
+                <Row>
+                  <Col md={6}>
+                    <Form.Group className="mb-3" controlId="formName">
+                      <Form.Label className="fw-medium small">{t.contact.nameLabel}</Form.Label>
+                      <Form.Control
+                        type="text"
+                        name="name"
+                        required
+                        placeholder={t.contact.namePlaceholder}
+                        value={formData.name}
+                        onChange={handleFormChange}
+                        className="bg-light border-0 py-2"
+                      />
+                    </Form.Group>
+                  </Col>
+                  <Col md={6}>
+                    <Form.Group className="mb-3" controlId="formEmail">
+                      <Form.Label className="fw-medium small">{t.contact.emailLabel}</Form.Label>
+                      <Form.Control
+                        type="email"
+                        name="email"
+                        required
+                        placeholder={t.contact.emailPlaceholder}
+                        value={formData.email}
+                        onChange={handleFormChange}
+                        className="bg-light border-0 py-2"
+                      />
+                    </Form.Group>
+                  </Col>
+                </Row>
 
-              <Form.Group className="mb-3" controlId="formMessage">
-                <Form.Label>{t.contact.messageLabel}</Form.Label>
-                <Form.Control
-                  as="textarea"
-                  name="message"
-                  rows={4}
-                  required
-                  placeholder={t.contact.messagePlaceholder}
-                  value={formData.message}
-                  onChange={handleFormChange}
-                />
-              </Form.Group>
+                <Form.Group className="mb-4" controlId="formMessage">
+                  <Form.Label className="fw-medium small">{t.contact.messageLabel}</Form.Label>
+                  <Form.Control
+                    as="textarea"
+                    name="message"
+                    rows={4}
+                    required
+                    placeholder={t.contact.messagePlaceholder}
+                    value={formData.message}
+                    onChange={handleFormChange}
+                    className="bg-light border-0 py-2"
+                  />
+                </Form.Group>
 
-              <div className="text-center">
                 <Button
                   type="submit"
-                  className="hero-button w-100"
+                  className="w-100 py-3 rounded-pill fw-bold d-flex align-items-center justify-content-center gap-2 border-0"
                   style={{
                     backgroundColor: "#458ddb",
-                    color: "white",
-                    fontSize: "1.1rem",
-                    padding: "0.8rem 1.5rem",
-                    border: "none",
-                    marginTop: "1rem",
+                    fontSize: "1rem",
+                    transition: "all 0.2s ease-in-out"
                   }}
                 >
+                  <FaPaperPlane />
                   {t.contact.submitBtn}
                 </Button>
-              </div>
-            </Form>
-          )}
-        </div>
+              </Form>
+            )}
+          </Card.Body>
+        </Card>
       </div>
     </Container>
   );

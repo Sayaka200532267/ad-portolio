@@ -18,6 +18,7 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
     problems: lang === "ja" ? "お悩み" : "Pain Points",
     improvements: lang === "ja" ? "改善案" : "Solutions",
     about: lang === "ja" ? "自己紹介" : "About Me",
+    achievements: lang === "ja" ? "実績" : "Achievements",
     skills: lang === "ja" ? "スキル" : "Skills",
     contact: lang === "ja" ? "お問い合わせ" : "Contact",
   };
@@ -43,6 +44,10 @@ const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
 
             <Nav.Link as={HashLink} smooth to="/#about">
               {navLabels.about}
+            </Nav.Link>
+
+            <Nav.Link as={HashLink} smooth to="/#achievements">
+              {navLabels.achievements}
             </Nav.Link>
 
             <Nav.Link as={HashLink} smooth to="/#skills">

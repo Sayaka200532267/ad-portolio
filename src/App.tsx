@@ -6,6 +6,7 @@ import HeroSection from "./components/HeroSection";
 import AboutSection from "./components/AboutSection";
 import Footer from "./components/Footer";
 import MainSection from "./components/MainSection";
+import AchievementsSection from "./components/AchievementsSection";
 import CapabilitiesSection from "./components/CapabilitiesSection";
 import SkillsAccordion from "./components/SkillsAccordion";
 import "./App.css";
@@ -39,6 +40,7 @@ const App: React.FC = () => {
       <HeroSection lang={lang} />
       <MainSection lang={lang} />
       <AboutSection lang={lang} />
+      <AchievementsSection lang={lang} />
       <CapabilitiesSection lang={lang} />
       <SkillsAccordion lang={lang} />
       <Footer lang={lang} />

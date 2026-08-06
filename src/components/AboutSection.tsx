@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { Row, Col, Image, Container, Modal } from "react-bootstrap";
-import { FaChartLine, FaGlobeAmericas, FaCheck, FaArrowRight } from "react-icons/fa";
+import { FaChartLine, FaGlobeAmericas, FaCheck } from "react-icons/fa";
 
 declare global {
   interface Window {
@@ -19,14 +19,6 @@ interface AboutSectionProps {
 const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
   // 拡大表示する画像パスの管理
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
-
-  // ポートフォリオクリック時のGTMイベント送信
-  const handlePortfolioClick = () => {
-    window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: "portfolio_click",
-    });
-  };
 
   // お名前・キャッチコピーコンポーネント（写真の上に配置）
   const NameTitle = () => (
@@ -235,27 +227,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
     </div>
   );
 
-  // ボタンコンポーネント（言語別にリンクURLを動的変更）
-  const OriginalLinkBtn = () => {
-    const portfolioUrl =
-      lang === "ja"
-        ? "https://docs.google.com/presentation/d/1MF-xCNcdE12Dm_VjfC-ckGgKsLNPTaZX/edit?slide=id.p1#slide=id.p1"
-        : "https://docs.google.com/presentation/d/1tn3eX17TwmhGJO0C4ExmdlwrDW276lib/edit?usp=sharing&ouid=110235430092876943173&rtpof=true&sd=true";
-
-    return (
-      <a
-        href={portfolioUrl}
-        target="_blank"
-        rel="noopener noreferrer"
-        className="portfolio-link shadow-sm"
-        onClick={handlePortfolioClick}
-      >
-        {lang === "ja" ? "広告運用・改善事例はこちら" : "View Case Studies & Portfolio"}
-        <FaArrowRight style={{ marginLeft: "0.5rem", fontSize: "0.9rem" }} />
-      </a>
-    );
-  };
-
   return (
     <Container className="about-section-container py-4">
       <section id="about" className="mb-5">
@@ -264,7 +235,7 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
         ========================= */}
         <div className="pc-block d-none d-md-block">
           <Row className="gx-5 align-items-start profile-row">
-            {/* 左側: 名前 ＋ プロフィール画像 ＋ ボタン */}
+            {/* 左側: 名前 ＋ プロフィール画像 */}
             <Col
               md={4}
               className="text-center profile-image-col sticky-md-top"
@@ -280,9 +251,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
                   className="profile-image shadow"
                   style={{ width: "220px", height: "220px", objectFit: "cover" }}
                 />
-              </div>
-              <div className="portfolio-link-wrapper-pc mt-4">
-                <OriginalLinkBtn />
               </div>
             </Col>
 
@@ -349,10 +317,6 @@ const AboutSection: React.FC<AboutSectionProps> = ({ lang }) => {
 
           {/* スマホ専用テキストを配置 */}
           <AboutContentMobile />
-
-          <div className="text-center my-4">
-            <OriginalLinkBtn />
-          </div>
 
           <div className="mt-4 p-3 bg-light rounded text-center shadow-sm">
             <h3 className="h6 fw-bold mb-3 text-dark">
