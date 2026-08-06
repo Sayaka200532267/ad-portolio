@@ -14,7 +14,7 @@ interface HeaderProps {
 const Header: React.FC<HeaderProps> = ({ lang, setLang }) => {
   // 言語に応じたナビゲーションテキストの設定
   const navLabels = {
-    brand: lang === "ja" ? "さやか | 広告運用×計測" : "Sayaka | Ad Ops & Analytics",
+    brand: lang === "ja" ? "小原さやか | 広告運用×計測" : "Sayaka Ohara | Ad Ops & Analytics",
     problems: lang === "ja" ? "お悩み" : "Pain Points",
     improvements: lang === "ja" ? "改善案" : "Solutions",
     about: lang === "ja" ? "自己紹介" : "About Me",
