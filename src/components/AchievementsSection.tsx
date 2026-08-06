@@ -22,7 +22,10 @@ export interface AchievementItem {
 const achievementsData: AchievementItem[] = [
   {
     id: "meta-ads",
-    category: { ja: "Meta広告運用・改善コンサル / D2C・EC", en: "Meta Ads & Strategy / D2C & E-Commerce" },
+    category: {
+      ja: "Meta広告運用・改善コンサル / D2C・EC",
+      en: "Marketing Strategy & Advertising Optimization",
+    },
     title: {
       ja: "直クライアント伴走：事業目標に合わせたマーケティング戦略設計とPDCA改善",
       en: "Direct Client Partnership: Strategic Marketing Design & Continuous PDCA Optimization",
@@ -35,20 +38,20 @@ const achievementsData: AchievementItem[] = [
     description: {
       ja: (
         <>
-          事業主様と直接連携し、ビジネス目標やマーケティング課題を踏まえた戦略設計から改善施策まで一貫して推進。
+          広告運用で成果を出すためには、単に管理画面の数値を追うだけではなく、事業目標やユーザーの行動を理解した上で改善の方向性を設計することが重要です。
           <br /><br />
-          広告管理画面上の数値だけを見るのではなく、ユーザー行動や市場反応を分析し、成果につながるクリエイティブ・訴求軸・導線改善を実施。
+          事業主様と直接連携し、ビジネス課題やマーケティング上のボトルネックを整理。ユーザーがなぜ反応するのか、どのような導線でコンバージョンに至るのかを分析し、クリエイティブ・訴求メッセージ・LP改善まで一貫して取り組みました。
           <br /><br />
-          定例ミーティングを通じて課題を可視化し、仮説立案・検証・改善を継続的に行うデータドリブンなマーケティングサイクルを構築。
+          定例ミーティングを通じて仮説立案・検証・改善を継続し、感覚に頼らずデータをもとに意思決定できるマーケティング改善サイクルを実行しました。
         </>
       ),
       en: (
         <>
-          Worked directly with business owners to design marketing strategies and drive improvement initiatives based on business objectives and marketing challenges.
+          Successful advertising requires more than monitoring platform metrics. It requires understanding business objectives, user behavior, and the factors that influence conversions to create effective improvement strategies.
           <br /><br />
-          Rather than focusing solely on advertising platform metrics, analyzed user behavior and market responses to optimize creatives, messaging, and conversion journeys that contribute to business growth.
+          Working directly with business owners, I identify marketing challenges and bottlenecks while analyzing how users interact with campaigns and websites. Based on these insights, I optimize the entire customer journey, from creative direction and messaging to landing page improvements.
           <br /><br />
-          Established a data-driven marketing cycle through regular discussions, hypothesis building, testing, and continuous optimization.
+          Through regular discussions and continuous hypothesis testing, I establish a data-driven marketing improvement cycle that enables informed decision-making beyond intuition.
         </>
       ),
     },
@@ -60,10 +63,10 @@ const achievementsData: AchievementItem[] = [
         "広告運用とサイト分析を横断した、継続的な改善プロセスの設計",
       ],
       en: [
-        "Identified business challenges, defined KPIs, and developed marketing strategies aligned with business goals",
-        "Optimized targeting, messaging, and creatives based on advertising data and user behavior analysis",
-        "Provided landing page optimization recommendations covering key conversion elements, including first-view design, copywriting, and CTAs",
-        "Designed continuous improvement processes by integrating paid advertising operations with website analytics",
+        "Identifying business challenges, defining KPIs, and developing marketing strategies aligned with business objectives",
+        "Optimizing targeting, messaging, and creatives based on advertising data and user behavior analysis",
+        "Providing landing page optimization recommendations covering first-view design, copywriting, CTAs, and conversion flows",
+        "Designing continuous improvement processes by integrating advertising operations with website analytics",
       ],
     },
     tags: {
@@ -73,7 +76,10 @@ const achievementsData: AchievementItem[] = [
   },
   {
     id: "ga4-recruitment",
-    category: { ja: "アクセス解析・分析コンサル / 教育法人", en: "Analytics Consulting / Education" },
+    category: {
+      ja: "アクセス解析・分析コンサル / 教育法人",
+      en: "GA4 / Analytics Infrastructure & Data Visualization",
+    },
     title: {
       ja: "直クライアント伴走：採用サイト GA4/GTM分析基盤構築＆意思決定支援",
       en: "Direct Analytics Consulting: GA4/GTM Measurement Architecture & Decision Support",
@@ -86,20 +92,20 @@ const achievementsData: AchievementItem[] = [
     description: {
       ja: (
         <>
-          採用目標や事業課題から逆算し、ユーザー行動を可視化する計測・分析基盤を設計。
+          マーケティング改善を進めるためには、まずユーザーがサイト上でどのように行動しているのかを正しく把握できる環境が必要です。
           <br /><br />
-          GTM・GA4を活用した精度の高いデータ取得環境の構築から、Looker Studioによる可視化・分析まで一貫して対応し、データに基づく意思決定を支えるマーケティング基盤を整備。
+          採用目標や事業課題から逆算し、必要なデータや指標を整理。GTM・GA4を活用した計測設計からLooker Studioによる可視化まで一貫して構築し、ユーザー行動を分析できるマーケティング基盤を整備しました。
           <br /><br />
-          取得すべき指標やユーザー行動を整理し、改善につながるKPI設計・分析環境を構築。応募までの導線や離脱ポイントを把握し、採用サイトの改善施策につながるインサイトを提供。
+          取得したデータを単なるレポートとして終わらせるのではなく、応募導線の改善や施策判断につながるインサイトへ変換し、継続的な改善につながる分析環境の構築をしました。
         </>
       ),
       en: (
         <>
-          Designed measurement and analytics frameworks based on recruitment goals and business objectives to visualize user behavior throughout the customer journey.
+          Effective marketing improvement starts with understanding how users behave on a website and identifying where opportunities for improvement exist.
           <br /><br />
-          Built accurate data collection environments using GTM and GA4, and developed Looker Studio dashboards to transform data into actionable insights and support data-driven decision-making.
+          By working backward from recruitment goals and business objectives, I define the necessary metrics and user behaviors to track. I design measurement environments using GTM and GA4, and build Looker Studio dashboards to visualize data and support better decision-making.
           <br /><br />
-          Defined key metrics and user behaviors to establish KPI frameworks and analytics environments that identify drop-off points and improve application conversion journeys.
+          Rather than treating analytics as simple reporting, I transform user behavior data into actionable insights that improve application journeys and support continuous marketing optimization.
         </>
       ),
     },
@@ -111,10 +117,10 @@ const achievementsData: AchievementItem[] = [
         "広告施策とサイト内行動を横断した効果分析環境の整備",
       ],
       en: [
-        "Defined custom events and KPI measurement requirements aligned with business objectives",
-        "Analyzed user behavior data to identify drop-off points and optimize application journeys",
-        "Designed and built Looker Studio dashboards enabling faster decision-making for management and marketing teams",
-        "Established cross-channel analysis environments connecting advertising performance with on-site user behavior",
+        "Defining custom events and KPI measurement requirements based on business objectives",
+        "Analyzing user behavior data to identify drop-off points and improve application journeys",
+        "Designing and building Looker Studio dashboards for management and marketing teams",
+        "Establishing cross-channel analysis environments connecting advertising performance with website behavior",
       ],
     },
     tags: {
@@ -124,7 +130,10 @@ const achievementsData: AchievementItem[] = [
   },
   {
     id: "gtm-agency-tracking",
-    category: { ja: "テクニカル計測・GTM構築 / 代理店パートナー", en: "Technical Tracking & GTM Setup / Agency Partner" },
+    category: {
+      ja: "テクニカル計測・GTM構築 / 代理店パートナー",
+      en: "GTM / GA4 Technical Partnership",
+    },
     title: {
       ja: "Web代理店支援：複雑な広告計測環境の再設計＆データ品質最適化",
       en: "Agency Technical Partner: Complex Measurement Infrastructure & Data Quality Optimization",
@@ -133,20 +142,20 @@ const achievementsData: AchievementItem[] = [
     description: {
       ja: (
         <>
-          広告代理店様のテクニカルパートナーとして、複雑化した広告計測環境を精査・再設計。
+          広告施策の精度を高めるためには、正しく計測できるデータ基盤が不可欠です。
           <br /><br />
-          GTM・GA4を中心としたデータ基盤の整備を通じて、広告配信の最適化や正確な効果分析を可能にする計測環境を構築。
+          広告代理店様のテクニカルパートナーとして、複雑化したGTM・GA4環境を精査し、既存の計測設計に潜む課題やデータ品質の問題を整理。タグ設計からトラッキング実装、計測環境の改善まで幅広く対応しました。
           <br /><br />
-          既存の計測設計に潜む課題やデータ品質の問題を洗い出し、広告運用担当者が正しく判断できる環境へ改善。複数ツールや複雑なサイト構成にも対応し、継続的なマーケティング改善につながるデータ基盤を整備。
+          広告媒体の最適化に必要なデータを正確に取得できる環境を整備し、マーケターが本来注力すべき戦略立案や改善活動に集中できるマーケティング基盤の作成を行いました。
         </>
       ),
       en: (
         <>
-          Served as a technical marketing partner for advertising agencies, reviewing and redesigning complex advertising measurement environments.
+          Accurate measurement infrastructure is essential for improving advertising performance and making reliable marketing decisions.
           <br /><br />
-          Built reliable tracking and analytics foundations centered around GTM and GA4, enabling more accurate performance analysis and improved advertising optimization.
+          As a technical marketing partner for advertising agencies, I review and redesign complex GTM and GA4 environments, identifying issues within existing tracking setups and improving data quality. I support the full process from measurement design and tag implementation to tracking optimization.
           <br /><br />
-          Identified issues within existing measurement setups and improved data quality to create reliable environments for marketing teams to make informed decisions. Supported complex website structures, multiple tools, and advanced tracking requirements to establish scalable measurement foundations.
+          By building reliable data foundations required for advertising optimization, I enable marketing teams to focus on strategic planning and continuous improvement.
         </>
       ),
     },
@@ -158,10 +167,10 @@ const achievementsData: AchievementItem[] = [
         "マーケティング施策の判断を支える計測基盤の改善・ディレクション",
       ],
       en: [
-        "Optimized GTM tags, triggers, and measurement designs based on requirements from agency marketers and directors",
-        "Implemented accurate tracking solutions across custom domains, enhanced e-commerce environments, and multi-tool integrations",
-        "Built high-quality data collection environments to improve advertising platform optimization accuracy",
-        "Directed improvements to measurement infrastructure that enables better marketing decisions",
+        "Optimizing GTM tags, triggers, and measurement designs based on requirements from agency marketers and directors",
+        "Implementing accurate tracking across custom domains, enhanced e-commerce setups, and multi-tool integrations",
+        "Building high-quality data collection environments to improve advertising platform optimization accuracy",
+        "Improving and directing measurement infrastructure that supports better marketing decisions",
       ],
     },
     tags: {
@@ -176,7 +185,6 @@ interface AchievementsSectionProps {
 }
 
 export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang = "ja" }) => {
-  // 各カードの「説明文の開閉状態」を管理するstate
   const [openDescriptions, setOpenDescriptions] = useState<{ [key: string]: boolean }>({});
 
   const toggleDescription = (id: string) => {
@@ -186,20 +194,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
     }));
   };
 
-  const uiText: {
-    badgeName: string;
-    title: { ja: string; en: string };
-    subtitle: { ja: React.ReactNode; en: React.ReactNode };
-    trustBadges: {
-      rating: { ja: string; en: string };
-      ctr: { ja: string; en: string };
-      accuracy: { ja: string; en: string };
-    };
-    toggleBtn: {
-      open: { ja: string; en: string };
-      close: { ja: string; en: string };
-    };
-  } = {
+  const uiText = {
     badgeName: "TRACK RECORD",
     title: { ja: "実績・プロジェクト", en: "Featured Case Studies" },
     subtitle: {
@@ -220,8 +215,8 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
       accuracy: { ja: "計測設定精度", en: "Tracking Precision" },
     },
     toggleBtn: {
-      open: { ja: "▼ 課題と支援の背景（詳細を見る）", en: "▼ Show Background & Details" },
-      close: { ja: "▲ 詳細を閉じる", en: "▲ Hide Details" },
+      open: { ja: "▼ 課題と支援の背景（詳細を見る）", en: "▼ Show Background & Story" },
+      close: { ja: "▲ 詳細を閉じる", en: "▲ Hide Background & Story" },
     },
   };
 
@@ -235,7 +230,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
           <p className="section-subtitle">{uiText.subtitle[lang]}</p>
         </div>
 
-        {/* トラストバッジ (3項目 中央均等配置) */}
+        {/* トラストバッジ */}
         <div
           className="trust-badges-grid"
           style={{
@@ -281,15 +276,25 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
                     {item.period && <span className="card-period">{item.period[lang]}</span>}
                   </div>
 
-                  <h3 className="card-title">{item.title[lang]}</h3>
+                  {/* タイトル（行間・余白を十分確保） */}
+                  <h3
+                    className="card-title"
+                    style={{
+                      lineHeight: "1.5",
+                      marginBottom: "16px",
+                    }}
+                  >
+                    {item.title[lang]}
+                  </h3>
 
+                  {/* 数値指標（Metrics） */}
                   {item.metrics && item.metrics.length > 0 && (
                     <div
                       className="metrics-box"
                       style={
                         item.metrics.length === 1
-                          ? { display: "flex", justifyContent: "center", textAlign: "center" }
-                          : undefined
+                          ? { display: "flex", justifyContent: "center", textAlign: "center", marginBottom: "16px" }
+                          : { marginBottom: "16px" }
                       }
                     >
                       {item.metrics.map((m, idx) => (
@@ -301,7 +306,29 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
                     </div>
                   )}
 
-                  {/* 説明文のトグル開閉ボタン */}
+                  {/* 【常時表示】箇条書きリスト（主な取り組み） */}
+                  <ul
+                    className="highlights-list"
+                    style={{
+                      paddingLeft: "1.2rem",
+                      margin: "0 0 16px 0",
+                    }}
+                  >
+                    {item.highlights[lang].map((h, idx) => (
+                      <li
+                        key={idx}
+                        style={{
+                          marginBottom: "8px",
+                          lineHeight: "1.5",
+                          fontSize: "0.88rem",
+                        }}
+                      >
+                        {h}
+                      </li>
+                    ))}
+                  </ul>
+
+                  {/* 詳細開閉ボタン */}
                   <button
                     onClick={() => toggleDescription(item.id)}
                     style={{
@@ -312,7 +339,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
                       fontSize: "0.85rem",
                       fontWeight: "bold",
                       padding: "6px 0",
-                      marginBottom: isOpen ? "12px" : "16px",
+                      marginBottom: "12px",
                       display: "block",
                       textAlign: "left",
                     }}
@@ -320,34 +347,26 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
                     {isOpen ? uiText.toggleBtn.close[lang] : uiText.toggleBtn.open[lang]}
                   </button>
 
-                  {/* 開いたときだけ表示される詳細説明文 */}
+                  {/* 【クリック時のみ表示】ストーリー形式の説明文章 */}
                   {isOpen && (
                     <div
                       className="card-description"
                       style={{
                         lineHeight: "1.7",
                         marginBottom: "16px",
-                        padding: "12px 14px",
+                        padding: "16px",
                         backgroundColor: "rgba(0, 102, 204, 0.04)",
-                        borderRadius: "6px",
+                        borderRadius: "8px",
                         fontSize: "0.9rem",
                       }}
                     >
                       {item.description[lang]}
                     </div>
                   )}
-
-                  {/* 常時表示される箇条書きリスト */}
-                  <ul className="highlights-list" style={{ paddingLeft: "1.2rem" }}>
-                    {item.highlights[lang].map((h, idx) => (
-                      <li key={idx} style={{ marginBottom: "8px", lineHeight: "1.5" }}>
-                        {h}
-                      </li>
-                    ))}
-                  </ul>
                 </div>
 
-                <div className="card-footer">
+                {/* タグチップ */}
+                <div className="card-footer" style={{ marginTop: "auto" }}>
                   {item.tags[lang].map((tag) => (
                     <span key={tag} className="tag-chip">
                       #{tag}
