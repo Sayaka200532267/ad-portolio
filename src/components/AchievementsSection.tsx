@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "../App.css";
 
 export type Language = "ja" | "en";
@@ -14,7 +14,6 @@ export interface AchievementItem {
   title: { ja: string; en: string };
   period?: { ja: string; en: string };
   metrics?: MetricItem[];
-  description: { ja: React.ReactNode; en: React.ReactNode };
   highlights: { ja: string[]; en: string[] };
   tags: { ja: string[]; en: string[] };
 }
@@ -35,26 +34,6 @@ const achievementsData: AchievementItem[] = [
       { label: { ja: "広告CTR", en: "Ad CTR" }, value: { ja: "3.0% → 4.9%", en: "3.0% → 4.9%" } },
       { label: { ja: "改善率", en: "Growth Rate" }, value: { ja: "+63%", en: "+63%" } },
     ],
-    description: {
-      ja: (
-        <>
-          広告運用で成果を出すためには、単に管理画面の数値を追うだけではなく、事業目標やユーザーの行動を理解した上で改善の方向性を設計することが重要です。
-          <br /><br />
-          事業主様と直接連携し、ビジネス課題やマーケティング上のボトルネックを整理。ユーザーがなぜ反応するのか、どのような導線でコンバージョンに至るのかを分析し、クリエイティブ・訴求メッセージ・LP改善まで一貫して取り組みました。
-          <br /><br />
-          定例ミーティングを通じて仮説立案・検証・改善を継続し、感覚に頼らずデータをもとに意思決定できるマーケティング改善サイクルを構築。
-        </>
-      ),
-      en: (
-        <>
-          Successful advertising requires more than monitoring platform metrics. It requires understanding business objectives, user behavior, and the factors that influence conversions to create effective improvement strategies.
-          <br /><br />
-          Working directly with business owners, I identify marketing challenges and bottlenecks while analyzing how users interact with campaigns and websites. Based on these insights, I optimize the entire customer journey, from creative direction and messaging to landing page improvements.
-          <br /><br />
-          Through regular discussions and continuous hypothesis testing, I establish a data-driven marketing improvement cycle that enables informed decision-making beyond intuition.
-        </>
-      ),
-    },
     highlights: {
       ja: [
         "事業理解をもとにした課題整理、KPI設計、マーケティング施策の方向性策定",
@@ -89,26 +68,6 @@ const achievementsData: AchievementItem[] = [
       { label: { ja: "計測精度", en: "Tracking Accuracy" }, value: { ja: "100%", en: "100%" } },
       { label: { ja: "構築フェーズ", en: "Project Phase" }, value: { ja: "配信前", en: "Pre-launch" } },
     ],
-    description: {
-      ja: (
-        <>
-          マーケティング改善を進めるためには、まずユーザーがサイト上でどのように行動しているのかを正しく把握できる環境が必要です。
-          <br /><br />
-          採用目標や事業課題から逆算し、必要なデータや指標を整理。GTM・GA4を活用した計測設計からLooker Studioによる可視化まで一貫して構築し、ユーザー行動を分析できるマーケティング基盤を整備しました。
-          <br /><br />
-          取得したデータを単なるレポートとして終わらせるのではなく、応募導線の改善や施策判断につながるインサイトへ変換し、継続的な改善につながる分析環境を構築。
-        </>
-      ),
-      en: (
-        <>
-          Effective marketing improvement starts with understanding how users behave on a website and identifying where opportunities for improvement exist.
-          <br /><br />
-          By working backward from recruitment goals and business objectives, I define the necessary metrics and user behaviors to track. I design measurement environments using GTM and GA4, and build Looker Studio dashboards to visualize data and support better decision-making.
-          <br /><br />
-          Rather than treating analytics as simple reporting, I transform user behavior data into actionable insights that improve application journeys and support continuous marketing optimization.
-        </>
-      ),
-    },
     highlights: {
       ja: [
         "事業目標に基づいたカスタムイベント設計、KPI計測要件の整理",
@@ -141,26 +100,6 @@ const achievementsData: AchievementItem[] = [
     metrics: [
       { label: { ja: "正確性", en: "Accuracy" }, value: { ja: "100%", en: "100%" } }
     ],
-    description: {
-      ja: (
-        <>
-          広告施策の精度を高めるためには、正しく計測できるデータ基盤が不可欠です。
-          <br /><br />
-          広告代理店様のテクニカルパートナーとして、複雑化したGTM・GA4環境を精査し、既存の計測設計に潜む課題やデータ品質の問題を整理。タグ設計からトラッキング実装、計測環境の改善まで幅広く対応しました。
-          <br /><br />
-          広告媒体の最適化に必要なデータを正確に取得できる環境を整備し、マーケターが本来注力すべき戦略立案や改善活動に集中できるマーケティング基盤を構築。
-        </>
-      ),
-      en: (
-        <>
-          Accurate measurement infrastructure is essential for improving advertising performance and making reliable marketing decisions.
-          <br /><br />
-          As a technical marketing partner for advertising agencies, I review and redesign complex GTM and GA4 environments, identifying issues within existing tracking setups and improving data quality. I support the full process from measurement design and tag implementation to tracking optimization.
-          <br /><br />
-          By building reliable data foundations required for advertising optimization, I enable marketing teams to focus on strategic planning and continuous improvement.
-        </>
-      ),
-    },
     highlights: {
       ja: [
         "代理店マーケター・ディレクターの要件を踏まえたGTMタグ、トリガー、計測設計の最適化",
@@ -187,15 +126,6 @@ interface AchievementsSectionProps {
 }
 
 export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang = "ja" }) => {
-  const [openDescriptions, setOpenDescriptions] = useState<{ [key: string]: boolean }>({});
-
-  const toggleDescription = (id: string) => {
-    setOpenDescriptions((prev) => ({
-      ...prev,
-      [id]: !prev[id],
-    }));
-  };
-
   const uiText = {
     badgeName: "TRACK RECORD",
     title: { ja: "実績・プロジェクト", en: "Featured Case Studies" },
@@ -223,10 +153,6 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
       rating: { ja: "クラウドソーシング評価", en: "Client Rating" },
       ctr: { ja: "Meta広告 CTR改善", en: "Meta Ads CTR Boost" },
       accuracy: { ja: "計測設定精度", en: "Tracking Precision" },
-    },
-    toggleBtn: {
-      open: { ja: "▼ 課題と支援の背景（詳細を見る）", en: "▼ Show Background & Story" },
-      close: { ja: "▲ 詳細を閉じる", en: "▲ Hide Background & Story" },
     },
   };
 
@@ -276,8 +202,6 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
         {/* 実績カード */}
         <div className="cards-grid">
           {achievementsData.map((item) => {
-            const isOpen = !!openDescriptions[item.id];
-
             return (
               <div key={item.id} className="case-card">
                 <div className="card-content">
@@ -316,7 +240,7 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
                     </div>
                   )}
 
-                  {/* 【常時表示】箇条書きリスト（主な取り組み） */}
+                  {/* 箇条書きリスト（主な取り組み） */}
                   <ul
                     className="highlights-list"
                     style={{
@@ -337,42 +261,6 @@ export const AchievementsSection: React.FC<AchievementsSectionProps> = ({ lang =
                       </li>
                     ))}
                   </ul>
-
-                  {/* 詳細開閉ボタン */}
-                  <button
-                    onClick={() => toggleDescription(item.id)}
-                    style={{
-                      background: "none",
-                      border: "none",
-                      color: "#0066cc",
-                      cursor: "pointer",
-                      fontSize: "0.85rem",
-                      fontWeight: "bold",
-                      padding: "6px 0",
-                      marginBottom: "12px",
-                      display: "block",
-                      textAlign: "left",
-                    }}
-                  >
-                    {isOpen ? uiText.toggleBtn.close[lang] : uiText.toggleBtn.open[lang]}
-                  </button>
-
-                  {/* 【クリック時のみ表示】ストーリー形式の説明文章 */}
-                  {isOpen && (
-                    <div
-                      className="card-description"
-                      style={{
-                        lineHeight: "1.7",
-                        marginBottom: "16px",
-                        padding: "16px",
-                        backgroundColor: "rgba(0, 102, 204, 0.04)",
-                        borderRadius: "8px",
-                        fontSize: "0.9rem",
-                      }}
-                    >
-                      {item.description[lang]}
-                    </div>
-                  )}
                 </div>
 
                 {/* タグチップ */}
