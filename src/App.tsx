@@ -30,13 +30,7 @@ const App: React.FC = () => {
       {/* ヘッダーに言語切替関数と現在の言語を渡す */}
       <Header lang={lang} setLang={setLang} />
 
-      <Alert variant="info" className="site-info-alert text-center mb-0">
-        {lang === "ja"
-          ? "このサイトはReactにて制作しています。"
-          : "This site is built with React."}
-      </Alert>
-
-      {/* 各セクションへ lang を伝播 */}
+     {/* 各セクションへ lang を伝播 */}
       <HeroSection lang={lang} />
       <MainSection lang={lang} />
       <AboutSection lang={lang} />

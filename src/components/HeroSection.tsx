@@ -19,17 +19,17 @@ const textVariants = {
 // 多言語テキスト定義
 const translations = {
   ja: {
-    titleMain: "広告運用",
-    titleSub: "正確な計測環境",
-    subtitleLine1: "確実な計測環境を整え、",
-    subtitleLine2: "広告費を無駄にしない運用を実現します。",
+    titleMain: "デジタルマーケティング",
+    titleSub: "データ分析コンサルタント",
+    subtitleLine1: "日本市場向けのマーケティング戦略から、",
+    subtitleLine2: "広告・計測・データ分析まで一貫して対応します。",
     btnText: "お問い合わせはこちら",
   },
   en: {
-    titleMain: "Ad Performance",
-    titleSub: "Accurate Measurement Setup",
-    subtitleLine1: "Build a reliable tracking foundation",
-    subtitleLine2: "to maximize ROI and eliminate wasted ad spend.",
+    titleMain: "Digital Marketing",
+    titleSub: "Analytics Consultant",
+    subtitleLine1: "Supporting Japan market growth through",
+    subtitleLine2: "marketing strategy, advertising, and analytics.",
     btnText: "Get in Touch",
   },
 };
@@ -61,9 +61,9 @@ const HeroSection: React.FC<HeroSectionProps> = ({ lang }) => {
           animate="visible"
         >
           {t.titleMain}
-          <br className="d-block d-lg-none" />
+          <br />
           {" × "}
-          <br className="d-block d-lg-none" />
+          <br />
           {t.titleSub}
         </motion.h1>
 
