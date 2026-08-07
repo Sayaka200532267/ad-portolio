@@ -1,7 +1,7 @@
 // src/components/CapabilitiesSection.tsx
 
 import React from "react";
-import { Container, Col } from "react-bootstrap";
+import { Container, Row, Col } from "react-bootstrap";
 import { IconType } from "react-icons";
 import {
   FaFacebookF,
@@ -158,18 +158,27 @@ const capabilitiesData: Capability[] = [
   },
 ];
 
-// アニメーション設定
-const containerVariants = {
-  hidden: {},
-  visible: { transition: { staggerChildren: 0.15, delayChildren: 0.1 } },
-};
-
-const iconVariants = {
-  hidden: { scale: 0.8, opacity: 0 },
-  visible: { scale: 1, opacity: 1, transition: { duration: 0.5 } },
+// 行ごとのアニメーション設定（上段・中段・下段のコンテナ用）
+const rowVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.5, // 行ごとに0.25秒ずつ遅らせて出現
+      duration: 0.7,
+      ease: "easeOut",
+    },
+  }),
 };
 
 const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ lang }) => {
+  // 3つずつ配列を分割して行を作る（上段3つ、中段3つ、下段2つ）
+  const rows = [];
+  for (let i = 0; i < capabilitiesData.length; i += 3) {
+    rows.push(capabilitiesData.slice(i, i + 3));
+  }
+
   return (
     <Container className="capabilities-section-container py-4">
       {/* セクションタイトル */}
@@ -180,32 +189,38 @@ const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ lang }) => {
         {lang === "ja" ? "対応可能な内容" : "Services & Capabilities"}
       </h3>
 
-      <motion.div
-        className="row justify-content-center text-center"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {capabilitiesData.map((item) => (
-          <Col xs={6} md={4} key={item.id} className="mb-4 about-icon-col">
-            <motion.div variants={iconVariants}>
-              {item.icons.map((icon, idx) => {
-                const IconComponent = icon.component;
-                return (
-                  <IconComponent
-                    key={idx}
-                    size={70}
-                    color={icon.color}
-                    style={icon.style}
-                  />
-                );
-              })}
-            </motion.div>
-            <p className="mt-2">{lang === "ja" ? item.textJa : item.textEn}</p>
-          </Col>
+      <div className="text-center">
+        {rows.map((rowItems, rowIndex) => (
+          <motion.div
+            key={rowIndex}
+            className="row justify-content-center mb-4"
+            custom={rowIndex}
+            variants={rowVariants}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true, margin: "-80px" }}
+          >
+            {rowItems.map((item) => (
+              <Col xs={6} md={4} key={item.id} className="about-icon-col">
+                <div>
+                  {item.icons.map((icon, idx) => {
+                    const IconComponent = icon.component;
+                    return (
+                      <IconComponent
+                        key={idx}
+                        size={70}
+                        color={icon.color}
+                        style={icon.style}
+                      />
+                    );
+                  })}
+                </div>
+                <p className="mt-2">{lang === "ja" ? item.textJa : item.textEn}</p>
+              </Col>
+            ))}
+          </motion.div>
         ))}
-      </motion.div>
+      </div>
     </Container>
   );
 };
