@@ -24,7 +24,7 @@ const rowVariants: Variants = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.25, // 行ごとに0.25秒ずつ遅らせて出現
+      delay: i * 0.15, // 行ごとに0.25秒ずつ遅らせて出現
       duration: 0.4,
       ease: "easeOut",
     },

@@ -67,12 +67,12 @@ const MainSection: React.FC<MainSectionProps> = ({ lang }) => {
           ヘッダータイトル（共通）
       ========================================== */}
       <div className="text-center mb-5">
-        <h2 className="fw-bold fs-3 mb-2" style={{ color: "#2c3e50" }}>
+        <h2 className="fw-bold fs-3 mb-2" style={{ color: "#1e293b" }}>
           {isJa
             ? "Web広告やアクセス解析で、こんなお悩みはありませんか？"
             : "Are You Facing These Marketing Challenges?"}
         </h2>
-        <p className="text-muted small">
+        <p className="text-muted small" style={{ color: "#64748b" }}>
           {isJa
             ? "データ計測と運用のプロが、現状の課題を整理し成果に繋がる環境へ改善します"
             : "Data-driven marketing and custom tracking setup to resolve your operational bottlenecks."}
@@ -84,28 +84,28 @@ const MainSection: React.FC<MainSectionProps> = ({ lang }) => {
       ========================================== */}
       <div className="pc-block d-none d-md-block">
         <Row className="g-4 mb-4">
-          {/* 左カラム：よくあるお悩み */}
+          {/* 左カラム：よくあるお悩み (Before) */}
           <Col md={6}>
-            <Card className="h-100 border-0 shadow-sm rounded-3 overflow-hidden">
+            <Card className="h-100 border-0 shadow-sm rounded-4 overflow-hidden">
               <Card.Header
-                className="bg-danger text-white py-3 fw-bold d-flex align-items-center justify-content-center fs-5"
-                style={{ backgroundColor: "#e74c3c" }}
+                className="text-white py-3 fw-bold d-flex align-items-center justify-content-center fs-5"
+                style={{ backgroundColor: "#334155" }}
               >
-                <FaExclamationTriangle className="me-2" />
+                <FaExclamationTriangle className="me-2 text-warning" />
                 {isJa ? "よくあるお悩み (Before)" : "Current Challenges"}
               </Card.Header>
-              <Card.Body className="p-4 bg-light">
+              <Card.Body className="p-4" style={{ backgroundColor: "#f8fafc" }}>
                 <ul className="list-unstyled mb-0">
                   {comparisonData.map((item, idx) => (
                     <li
                       key={idx}
-                      className="d-flex align-items-start mb-3 pb-3 border-bottom border-light-subtle"
+                      className="d-flex align-items-start mb-3 pb-3 border-bottom border-light"
                       style={{ minHeight: "60px" }}
                     >
-                      <span className="badge bg-danger-subtle text-danger rounded-circle me-3 mt-1 px-2 py-1 fs-6 flex-shrink-0">
+                      <span className="badge bg-danger bg-opacity-10 text-danger rounded-circle me-3 mt-1 px-2 py-1 fs-6 flex-shrink-0 fw-bold">
                         ?
                       </span>
-                      <span className="text-secondary small fw-medium" style={{ lineHeight: "1.6" }}>
+                      <span className="text-secondary small fw-medium" style={{ lineHeight: "1.6", color: "#475569" }}>
                         {isJa ? item.problemJa : item.problemEn}
                       </span>
                     </li>
@@ -115,14 +115,14 @@ const MainSection: React.FC<MainSectionProps> = ({ lang }) => {
             </Card>
           </Col>
 
-          {/* 右カラム：改善後の姿 */}
+          {/* 右カラム：改善後の姿 (After) */}
           <Col md={6}>
-            <Card className="h-100 border-0 shadow-sm rounded-3 overflow-hidden">
+            <Card className="h-100 border-0 shadow-sm rounded-4 overflow-hidden">
               <Card.Header
                 className="text-white py-3 fw-bold d-flex align-items-center justify-content-center fs-5"
-                style={{ backgroundColor: "#27ae60" }}
+                style={{ backgroundColor: "#0f172a" }}
               >
-                <FaCheckCircle className="me-2" />
+                <FaCheckCircle className="me-2 text-success" />
                 {isJa ? "データでこのように改善 (After)" : "How I Can Solve It"}
               </Card.Header>
               <Card.Body className="p-4 bg-white">
@@ -130,14 +130,14 @@ const MainSection: React.FC<MainSectionProps> = ({ lang }) => {
                   {comparisonData.map((item, idx) => (
                     <li
                       key={idx}
-                      className="d-flex align-items-start mb-3 pb-3 border-bottom"
+                      className="d-flex align-items-start mb-3 pb-3 border-bottom border-light"
                       style={{ minHeight: "60px" }}
                     >
                       <FaCheckCircle
                         className="text-success me-3 mt-1 flex-shrink-0"
                         style={{ fontSize: "1.1rem" }}
                       />
-                      <span className="text-dark small fw-bold" style={{ lineHeight: "1.6" }}>
+                      <span className="small fw-bold" style={{ lineHeight: "1.6", color: "#1e293b" }}>
                         {isJa ? item.solutionJa : item.solutionEn}
                       </span>
                     </li>
@@ -154,30 +154,30 @@ const MainSection: React.FC<MainSectionProps> = ({ lang }) => {
       ========================================== */}
       <div className="mobile-block d-md-none">
         {comparisonData.map((item, idx) => (
-          <Card key={idx} className="mb-4 border-0 shadow-sm rounded-3 overflow-hidden">
+          <Card key={idx} className="mb-4 border-0 shadow-sm rounded-4 overflow-hidden">
             {/* お悩み（Before） */}
-            <Card.Body className="p-3 bg-light border-start border-4 border-danger">
-              <div className="d-flex align-items-center text-danger fw-bold small mb-1">
-                <FaExclamationTriangle className="me-1" />
+            <Card.Body className="p-3 bg-light border-start border-4 border-secondary">
+              <div className="d-flex align-items-center text-muted fw-bold small mb-1">
+                <FaExclamationTriangle className="me-1 text-warning" />
                 {isJa ? `課題 ${idx + 1}` : `Issue ${idx + 1}`}
               </div>
-              <p className="mb-0 text-secondary small fw-medium">
+              <p className="mb-0 small fw-medium" style={{ color: "#475569" }}>
                 {isJa ? item.problemJa : item.problemEn}
               </p>
             </Card.Body>
 
             {/* 接続矢印 */}
             <div className="text-center py-1 bg-white text-muted">
-              <FaArrowDown style={{ fontSize: "0.8rem", color: "#27ae60" }} />
+              <FaArrowDown style={{ fontSize: "0.8rem", color: "#0f172a" }} />
             </div>
 
             {/* 改善策（After） */}
-            <Card.Body className="p-3 bg-white border-start border-4 border-success">
-              <div className="d-flex align-items-center text-success fw-bold small mb-1">
-                <FaCheckCircle className="me-1" />
+            <Card.Body className="p-3 bg-white border-start border-4 border-dark">
+              <div className="d-flex align-items-center fw-bold small mb-1" style={{ color: "#0f172a" }}>
+                <FaCheckCircle className="me-1 text-success" />
                 {isJa ? "改善アプローチ" : "Solution"}
               </div>
-              <p className="mb-0 text-dark small fw-bold">
+              <p className="mb-0 small fw-bold" style={{ color: "#1e293b" }}>
                 {isJa ? item.solutionJa : item.solutionEn}
               </p>
             </Card.Body>
