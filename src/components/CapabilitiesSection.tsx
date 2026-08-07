@@ -1,8 +1,9 @@
 // src/components/CapabilitiesSection.tsx
 
 import React from "react";
-import { Container, Row, Col } from "react-bootstrap";
+import { Container, Col } from "react-bootstrap";
 import { IconType } from "react-icons";
+import { motion, Variants } from "framer-motion";
 import {
   FaFacebookF,
   FaInstagram,
@@ -14,8 +15,21 @@ import {
   FaLanguage,
 } from "react-icons/fa";
 import { FiTarget } from "react-icons/fi";
-import { motion } from "framer-motion";
 import "../App.css";
+
+// 行ごとのアニメーション設定（Variants型を適用）
+const rowVariants: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: i * 0.25, // 行ごとに0.25秒ずつ遅らせて出現
+      duration: 0.4,
+      ease: "easeOut",
+    },
+  }),
+};
 
 type Language = "ja" | "en";
 
@@ -157,20 +171,6 @@ const capabilitiesData: Capability[] = [
     ),
   },
 ];
-
-// 行ごとのアニメーション設定（上段・中段・下段のコンテナ用）
-const rowVariants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: (i: number) => ({
-    opacity: 1,
-    y: 0,
-    transition: {
-      delay: i * 0.5, // 行ごとに0.25秒ずつ遅らせて出現
-      duration: 0.7,
-      ease: "easeOut",
-    },
-  }),
-};
 
 const CapabilitiesSection: React.FC<CapabilitiesSectionProps> = ({ lang }) => {
   // 3つずつ配列を分割して行を作る（上段3つ、中段3つ、下段2つ）
